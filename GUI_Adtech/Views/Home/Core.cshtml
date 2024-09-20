@@ -1,0 +1,96 @@
+﻿
+<style>
+    .form-section {
+        margin-top: 20px;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+        .form-section h4 {
+            margin-bottom: 15px;
+        }
+
+    .btn-custom {
+        background-color: #001f3f;
+        color: white;
+        border-color: #001f3f;
+    }
+
+        .btn-custom:hover {
+            background-color: #0056b3;
+        }
+
+    .btn-cancel {
+        background-color: #d9534f;
+        color: white;
+        border-color: #d9534f;
+    }
+
+        .btn-cancel:hover {
+            background-color: #c9302c;
+        }
+
+    .button-group {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 30px;
+    }
+
+        .button-group button {
+            margin-left: 10px;
+        }
+</style>
+
+<div class="container mt-5">
+    <h2>Service Configuration</h2>
+    <form id="configForm">
+        <!-- First Section -->
+        <div class="form-section">
+            <div class="mb-3">
+                <label for="serviceURL" class="form-label">Service URL</label>
+                <input type="text" class="form-control" id="serviceURL" placeholder="Enter Service URL">
+            </div>
+            <div class="mb-3">
+                <label for="binding" class="form-label">Binding</label>
+                <input type="text" class="form-control" id="binding" placeholder="Enter Binding">
+            </div>
+            <div class="mb-3">
+                <label for="authentication" class="form-label">Authentication</label>
+                <select class="form-select" id="authentication">
+                    <option value="" selected disabled>Choose Authentication</option>
+                    <option value="basic">Basic</option>
+                    <option value="certificate">Certificate</option>
+                    <option value="token">Token</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="protocol" class="form-label">Protocol</label>
+                <input type="text" class="form-control" id="protocol" placeholder="Enter Protocol">
+            </div>
+        </div>
+
+        <!-- Credential Info Section -->
+        <div class="form-section mt-4">
+            <h4>Credential Info</h4>
+            <div class="mb-3">
+                <label for="dblink" class="form-label">DB Link</label>
+                <input type="text" class="form-control" id="dblink" placeholder="Enter DB Link">
+            </div>
+            <div class="mb-3">
+                <label for="logfilePath" class="form-label">Logfile Path</label>
+                <input type="text" class="form-control" id="logfilePath" placeholder="Enter Logfile Path">
+            </div>
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="allowEditing">
+                <label class="form-check-label" for="allowEditing">Allow User Editing</label>
+            </div>
+        </div>
+
+        <!-- Button Section -->
+        <div class="button-group">
+            <button type="submit" class="btn btn-custom">Save</button>
+            <button type="button" class="btn btn-cancel">Cancel</button>
+        </div>
+    </form>
+</div>
