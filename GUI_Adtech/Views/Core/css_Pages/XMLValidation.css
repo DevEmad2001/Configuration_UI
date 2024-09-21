@@ -1,0 +1,41 @@
+﻿.form-section {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.form-section h4 {
+    margin-bottom: 15px;
+}
+
+.btn-custom {
+    background-color: #001f3f;
+    color: white;
+    border-color: #001f3f;
+}
+
+    .btn-custom:hover {
+        background-color: #0056b3;
+    }
+
+.btn-cancel {
+    background-color: #d9534f;
+    color: white;
+    border-color: #d9534f;
+}
+
+    .btn-cancel:hover {
+        background-color: #c9302c;
+    }
+
+.button-group {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+}
+
+    .button-group button {
+        margin-left: 10px;
+    }
+

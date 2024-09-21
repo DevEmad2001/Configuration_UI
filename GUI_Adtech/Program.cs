@@ -1,9 +1,22 @@
+﻿using GUI_Adtech.Models;
+using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
+
+
+///
+var appBuilder = WebApplication.CreateBuilder(args);
+
+// إعداد الاتصال بقاعدة البيانات
+appBuilder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(appBuilder.Configuration.GetConnectionString("DefaultConnection")));
+
+// باقي الكود...
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="~/GUI_Adtech.styles.css" asp-append-version="true" />
     <link href="~/lib/bootstrap/dist/css/style.css" rel="stylesheet" />
 
+
     <style>
         .dropdown-menu a {
             color: white !important; /* Setting the text color to white */
@@ -62,10 +63,10 @@
                                 <i class="fas fa-cogs"></i> Core
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class ="nav-link" asp-area="" asp-controller="Home" asp-action="Core">Database Config</a></li>
-                                <li><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Core">FolderStructure</a></li>
-                                <li><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Core">SFTPConnector</a></li>
-                                <li><a class="nav-link" asp-area="" asp-controller="Home" asp-action="Core">XMLValidation</a></li>
+                                <li><a class="dropdown-item" asp-controller="Core" asp-action="DatabaseConfig">Database Config</a></li>
+                                <li><a class="dropdown-item" asp-controller="Core" asp-action="FolderStructure">Folder Structure</a></li>
+                                <li><a class="dropdown-item" asp-controller="Core" asp-action="SFTPConnector">SFTP Connector</a></li>
+                                <li><a class="dropdown-item" asp-controller="Core" asp-action="XMLValidation">XML Validation</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -73,9 +74,11 @@
                                 <i class="fas fa-sitemap"></i> HES
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">HES Feature 1</a></li>
-                                <li><a class="dropdown-item" href="#">HES Feature 2</a></li>
-                                <li><a class="dropdown-item" href="#">HES Feature 3</a></li>
+                                <li><a class="dropdown-item" asp-controller="HES" asp-action="MeterInstallation">Meter Installation</a></li>
+                                <li><a class="dropdown-item" asp-controller="HES" asp-action="DailyReading">Daily Reading</a></li>
+                                <li><a class="dropdown-item" asp-controller="HES" asp-action="ControlService">Control Service</a></li>
+                                <li><a class="dropdown-item" asp-controller="HES" asp-action="DataService">Data Service</a></li>
+
                             </ul>
                         </li>
                         <li class="nav-item dropdown">
@@ -83,30 +86,42 @@
                                 <i class="fas fa-map-marked-alt"></i> GIS
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">GIS Feature 1</a></li>
-                                <li><a class="dropdown-item" href="#">GIS Feature 2</a></li>
-                                <li><a class="dropdown-item" href="#">GIS Feature 3</a></li>
+                                <li><a class="dropdown-item" asp-controller="GIS" asp-action="GISUDA">GISUDA</a></li>
+                                <li><a class="dropdown-item" asp-controller="GIS" asp-action="NetworkGISNode">Network GIS Node</a></li>
+
                             </ul>
                         </li>
+
+
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-server"></i> SCADA
+                                <i class="fas fa-map-marked-alt"></i> SCADA
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">SCADA Feature 1</a></li>
-                                <li><a class="dropdown-item" href="#">SCADA Feature 2</a></li>
-                                <li><a class="dropdown-item" href="#">SCADA Feature 3</a></li>
+                                <li><a class="dropdown-item" asp-controller="SCADA" asp-action="NetwrokMeter">Netwrok Meter</a></li>
                             </ul>
                         </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-map-marked-alt"></i> SINCAL
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" asp-controller="SINCAL" asp-action="Feeders">Feeders</a></li>
+                                <li><a class="dropdown-item" asp-controller="SINCAL" asp-action=" Transformers"> Transformers</a></li>
+
+                            </ul>
+                        </li> 
+
                         <li class="nav-item">
                             <a class="nav-link" asp-area="" asp-controller="Home" asp-action="SINCAL">
-                                <i class="fas fa-project-diagram"></i> SINCAL
+                                <i class="fas fa-project-diagram"></i> Rest
                             </a>
                         </li>
 
 
                         <!-- Dropdown for Systems -->
-                        <li class="nav-item dropdown">
+@*                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-cogs"></i> Systems
                             </a>
@@ -117,10 +132,10 @@
                                 <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="SINCAL">Network Planning</a>
                                 <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Core">Adtech Core Service</a>
                             </div>
-                        </li>
+                        </li> *@
 
                         <!-- Dropdown for Services -->
-                        <li class="nav-item dropdown">
+@*                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                                 <i class="fas fa-briefcase"></i> Services
                             </a>
@@ -131,7 +146,7 @@
                                 <a class="dropdown-item" href="#">Cloud Services</a>
                             </div>
                         </li>
-                    </ul>
+                    </ul> *@
                 </div>
             </div>
         </nav>
