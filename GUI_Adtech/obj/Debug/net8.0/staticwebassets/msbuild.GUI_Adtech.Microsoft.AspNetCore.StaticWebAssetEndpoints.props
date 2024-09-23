@@ -28,13 +28,13 @@
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\GUI_Adtech.ebna855c5x.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-dt8GsvFw/njTLnLDU97TM4JdVJvU4j6Mn3rGWZbCpHU="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1128"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022dt8GsvFw/njTLnLDU97TM4JdVJvU4j6Mn3rGWZbCpHU=\u0022"},{"Name":"Last-Modified","Value":"Sat, 21 Sep 2024 14:24:27 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1128"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022dt8GsvFw/njTLnLDU97TM4JdVJvU4j6Mn3rGWZbCpHU=\u0022"},{"Name":"Last-Modified","Value":"Sun, 22 Sep 2024 15:24:29 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/GUI_Adtech/GUI_Adtech.ebna855c5x.bundle.scp.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\GUI_Adtech.ebna855c5x.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"ebna855c5x"},{"Name":"integrity","Value":"sha256-dt8GsvFw/njTLnLDU97TM4JdVJvU4j6Mn3rGWZbCpHU="},{"Name":"label","Value":"_content/GUI_Adtech/GUI_Adtech.bundle.scp.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1128"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022dt8GsvFw/njTLnLDU97TM4JdVJvU4j6Mn3rGWZbCpHU=\u0022"},{"Name":"Last-Modified","Value":"Sat, 21 Sep 2024 14:24:27 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1128"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022dt8GsvFw/njTLnLDU97TM4JdVJvU4j6Mn3rGWZbCpHU=\u0022"},{"Name":"Last-Modified","Value":"Sun, 22 Sep 2024 15:24:29 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/GUI_Adtech/images/adtech.mxgj2jtzpc.png">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\adtech.png'))</AssetFile>
