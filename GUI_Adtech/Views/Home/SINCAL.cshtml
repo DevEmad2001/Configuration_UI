@@ -1,96 +1,263 @@
-﻿
+﻿@* <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adtech Platform</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Hero Section Styling */
+        .hero {
+            background: linear-gradient(135deg, #1d2671 0%, #c33764 100%);
+            padding: 80px 0;
+            color: white;
+            text-align: center;
+        }
+
+            .hero h1 {
+                font-size: 3em;
+                font-weight: bold;
+                margin-bottom: 20px;
+            }
+
+            .hero p {
+                font-size: 1.5em;
+                margin-bottom: 30px;
+            }
+
+            .hero .btn {
+                padding: 15px 30px;
+                font-size: 1.2em;
+                border-radius: 50px;
+            }
+
+        /* Services Section Styling */
+        .services-overview {
+            padding: 50px 0;
+        }
+
+        .service-card {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+            .service-card:hover {
+                transform: translateY(-10px);
+            }
+
+            .service-card i {
+                font-size: 3em;
+                margin-bottom: 15px;
+                color: #007bff;
+            }
+
+            .service-card h3 {
+                font-size: 1.5em;
+                margin-bottom: 15px;
+            }
+
+            .service-card p {
+                font-size: 1em;
+                color: #555;
+            }
+
+            .service-card .btn {
+                margin-top: 15px;
+                padding: 10px 20px;
+                border-radius: 30px;
+            }
+    </style>
+</head>
+
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Welcome to Adtech Platform</h1>
+            <p>Your all-in-one system for GIS, SCADA, and more!</p>
+            <a href="/Home/Start" class="btn btn-primary">Get Started</a>
+        </div>
+    </section>
+
+    <!-- Services Overview Section -->
+    <section class="services-overview">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <i class="fas fa-sitemap"></i>
+                        <h3>HES</h3>
+                        <p>Head-End System for managing energy data and assets.</p>
+                        <a href="/Home/HES" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <h3>GIS</h3>
+                        <p>Geographic Information System for accurate asset tracking.</p>
+                        <a href="/Home/GIS" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <i class="fas fa-network-wired"></i>
+                        <h3>SCADA</h3>
+                        <p>Supervisory Control and Data Acquisition for system monitoring.</p>
+                        <a href="/Home/SCADA" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
+ *@
+
+
+@{
+    ViewBag.Title = "Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml"; // If you're using a layout page
+}
+
+<div class="container mx-auto px-4">
+    <!-- Overview Cards -->
+    <div class="grid grid-cols-4 gap-4 my-6">
+        <div class="card bg-blue-500 p-4 rounded-lg shadow-md">
+            <h3 class="text-lg font-bold text-white">Core Operations</h3>
+            <p class="text-white">Overview of the core operations</p>
+        </div>
+        <div class="card bg-green-500 p-4 rounded-lg shadow-md">
+            <h3 class="text-lg font-bold text-white">HES Health</h3>
+            <p class="text-white">System is running smoothly</p>
+        </div>
+        <div class="card bg-yellow-500 p-4 rounded-lg shadow-md">
+            <h3 class="text-lg font-bold text-white">SCADA Alerts</h3>
+            <p class="text-white">No alerts at this moment</p>
+        </div>
+        <div class="card bg-red-500 p-4 rounded-lg shadow-md">
+            <h3 class="text-lg font-bold text-white">SINCAL Reports</h3>
+            <p class="text-white">View recent system reports</p>
+        </div>
+    </div>
+
+    <!-- Graph Section -->
+    <div class="bg-white shadow-md rounded-lg p-6">
+        <h2 class="text-xl font-bold mb-4">System Load Over Time</h2>
+        <div id="chart">
+            <!-- Placeholder for graph/chart -->
+            <p>Graph will be here...</p>
+        </div>
+    </div>
+
+    <!-- Notifications -->
+    <div class="bg-gray-100 shadow-md rounded-lg p-6 my-6">
+        <h2 class="text-xl font-bold mb-4">Notifications</h2>
+        <ul>
+            <li>Error detected in HES module</li>
+            <li>SCADA system updated successfully</li>
+            <li>System reboot scheduled for tonight</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Embedded CSS for styling -->
 <style>
-    .form-section {
-        margin-top: 20px;
-        padding: 20px;
-        border: 1px solid #ddd;
-        border-radius: 5px;
+    .container {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
-        .form-section h4 {
-            margin-bottom: 15px;
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+    }
+
+    .card {
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+
+        .card:hover {
+            transform: scale(1.05);
         }
 
-    .btn-custom {
-        background-color: #001f3f;
+    .bg-blue-500 {
+        background-color: #3b82f6;
+    }
+
+    .bg-green-500 {
+        background-color: #10b981;
+    }
+
+    .bg-yellow-500 {
+        background-color: #f59e0b;
+    }
+
+    .bg-red-500 {
+        background-color: #ef4444;
+    }
+
+    .rounded-lg {
+        border-radius: 12px;
+    }
+
+    .shadow-md {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .p-4 {
+        padding: 1rem;
+    }
+
+    .p-6 {
+        padding: 1.5rem;
+    }
+
+    .my-6 {
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .text-lg {
+        font-size: 1.125rem;
+    }
+
+    .text-xl {
+        font-size: 1.25rem;
+    }
+
+    .font-bold {
+        font-weight: 700;
+    }
+
+    .text-white {
         color: white;
-        border-color: #001f3f;
     }
 
-        .btn-custom:hover {
-            background-color: #0056b3;
-        }
-
-    .btn-cancel {
-        background-color: #d9534f;
-        color: white;
-        border-color: #d9534f;
+    .bg-gray-100 {
+        background-color: #f3f4f6;
     }
 
-        .btn-cancel:hover {
-            background-color: #c9302c;
-        }
-
-    .button-group {
-        display: flex;
-        justify-content: flex-end;
-        margin-top: 30px;
+    ul {
+        list-style-type: disc;
+        padding-left: 1.5rem;
     }
 
-        .button-group button {
-            margin-left: 10px;
-        }
+    li {
+        margin-bottom: 0.5rem;
+    }
 </style>
 
-<div class="container mt-5">
-    <h2>Service Configuration</h2>
-    <form id="configForm">
-        <!-- First Section -->
-        <div class="form-section">
-            <div class="mb-3">
-                <label for="serviceURL" class="form-label">Service URL</label>
-                <input type="text" class="form-control" id="serviceURL" placeholder="Enter Service URL">
-            </div>
-            <div class="mb-3">
-                <label for="binding" class="form-label">Binding</label>
-                <input type="text" class="form-control" id="binding" placeholder="Enter Binding">
-            </div>
-            <div class="mb-3">
-                <label for="authentication" class="form-label">Authentication</label>
-                <select class="form-select" id="authentication">
-                    <option value="" selected disabled>Choose Authentication</option>
-                    <option value="basic">Basic</option>
-                    <option value="certificate">Certificate</option>
-                    <option value="token">Token</option>
-                </select>
-            </div>
-            <div class="mb-3">
-                <label for="protocol" class="form-label">Protocol</label>
-                <input type="text" class="form-control" id="protocol" placeholder="Enter Protocol">
-            </div>
-        </div>
-
-        <!-- Credential Info Section -->
-        <div class="form-section mt-4">
-            <h4>Credential Info</h4>
-            <div class="mb-3">
-                <label for="dblink" class="form-label">DB Link</label>
-                <input type="text" class="form-control" id="dblink" placeholder="Enter DB Link">
-            </div>
-            <div class="mb-3">
-                <label for="logfilePath" class="form-label">Logfile Path</label>
-                <input type="text" class="form-control" id="logfilePath" placeholder="Enter Logfile Path">
-            </div>
-            <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input" id="allowEditing">
-                <label class="form-check-label" for="allowEditing">Allow User Editing</label>
-            </div>
-        </div>
-
-        <!-- Button Section -->
-        <div class="button-group">
-            <button type="submit" class="btn btn-custom">Save</button>
-            <button type="button" class="btn btn-cancel">Cancel</button>
-        </div>
-    </form>
-</div>

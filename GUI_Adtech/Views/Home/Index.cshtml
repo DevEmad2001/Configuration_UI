@@ -1,124 +1,285 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+﻿<title>Adtech Platform</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adtech Platform</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        /* Hero Section Styling */
-        .hero {
-            background: linear-gradient(135deg, #1d2671 0%, #c33764 100%);
-            padding: 80px 0;
+<style>
+    /* Hero Section Styling */
+    .hero {
+        background: linear-gradient(135deg, #1d2671 0%, #c33764 100%);
+        padding: 80px 0;
+        color: white;
+        text-align: center;
+    }
+
+        .hero h1 {
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+        }
+
+        .hero .btn {
+            padding: 15px 30px;
+            font-size: 1.2em; 
+            border-radius: 50px;
+            background-color: #007bff;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+
+            .hero .btn:hover {
+                background-color: #0056b3;
+            }
+
+    /* Services Section Styling */
+    .services-overview {
+        padding: 50px 0;
+    }
+
+    .service-card {
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 30px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            background-color: #f0f4ff;
+        }
+
+        .service-card i {
+            font-size: 3em;
+            margin-bottom: 15px;
+            color: #007bff;
+        }
+
+        .service-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .service-card p {
+            font-size: 1em;
+            color: #555;
+        }
+
+        .service-card .btn {
+            margin-top: 15px;
+            padding: 10px 20px;
+            border-radius: 30px;
+            background-color: #6c757d;
             color: white;
-            text-align: center;
+            border: none;
+            transition: background-color 0.3s ease;
         }
 
-            .hero h1 {
-                font-size: 3em;
-                font-weight: bold;
-                margin-bottom: 20px;
+            .service-card .btn:hover {
+                background-color: #5a6268;
             }
 
-            .hero p {
-                font-size: 1.5em;
-                margin-bottom: 30px;
-            }
-
-            .hero .btn {
-                padding: 15px 30px;
-                font-size: 1.2em;
-                border-radius: 50px;
-            }
-
-        /* Services Section Styling */
-        .services-overview {
-            padding: 50px 0;
+        /* Color Customizations for Each Service */
+        .service-card.hes {
+            background-color: #ffebcc;
         }
 
-        .service-card {
-            background-color: #f9f9f9;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            transition: transform 0.3s ease;
+        .service-card.gis {
+            background-color: #e0f7fa;
         }
 
-            .service-card:hover {
-                transform: translateY(-10px);
+        .service-card.scada {
+            background-color: #e8f5e9;
+        }
+
+        .service-card.sincal {
+            background-color: #f3e5f5;
+        }
+
+        .service-card.core {
+            background-color: #ffe0b2;
+        }
+
+        .service-card:hover {
+            background-color: #f0f4ff;
+        }
+
+    /* Services Section Styling */
+    .services-overview {
+        padding: 50px 0;
+    }
+
+    .service-card {
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 40px; /* زيادة التباعد الداخلي (Padding) */
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: transform 0.3s ease, background-color 0.3s ease;
+        width: 100%; /* اجعل البطاقة تحتل العرض المتاح بالكامل */
+        height: 350px; /* زيادة ارتفاع البطاقات */
+    }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            background-color: #f0f4ff;
+        }
+
+        /* أيقونات البطاقات */
+        .service-card i {
+            font-size: 3.5em; /* زيادة حجم الأيقونات */
+            margin-bottom: 15px;
+            color: #007bff;
+        }
+
+        /* عناوين البطاقات */
+        .service-card h3 {
+            font-size: 1.8em; /* زيادة حجم النص */
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        /* نصوص البطاقات */
+        .service-card p {
+            font-size: 1.1em; /* زيادة حجم النص */
+            color: #555;
+        }
+
+        /* أزرار البطاقات */
+        .service-card .btn {
+            margin-top: 20px;
+            padding: 12px 25px; /* زيادة حجم الأزرار */
+            border-radius: 30px;
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+
+            .service-card .btn:hover {
+                background-color: #5a6268;
             }
 
-            .service-card i {
-                font-size: 3em;
-                margin-bottom: 15px;
-                color: #007bff;
-            }
+        /* Color Customizations for Each Service */
+        .service-card.hes {
+            background-color: #ffebcc;
+        }
 
-            .service-card h3 {
-                font-size: 1.5em;
-                margin-bottom: 15px;
-            }
+        .service-card.gis {
+            background-color: #e0f7fa;
+        }
 
-            .service-card p {
-                font-size: 1em;
-                color: #555;
-            }
+        .service-card.scada {
+            background-color: #e8f5e9;
+        }
 
-            .service-card .btn {
-                margin-top: 15px;
-                padding: 10px 20px;
-                border-radius: 30px;
-            }
-    </style>
-</head>
+        .service-card.sincal {
+            background-color: #f3e5f5;
+        }
 
-<body>
+        .service-card.core {
+            background-color: #ffe0b2;
+        }
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1>Welcome to Adtech Platform</h1>
-            <p>Your all-in-one system for GIS, SCADA, and more!</p>
-            <a href="/Home/Start" class="btn btn-primary">Get Started</a>
-        </div>
-    </section>
+        .service-card:hover {
+            background-color: #f0f4ff;
+        }
 
-    <!-- Services Overview Section -->
-    <section class="services-overview">
-        <div class="container">
-            <div class="row text-center">
-                <div class="col-md-4">
-                    <div class="service-card">
-                        <i class="fas fa-sitemap"></i>
-                        <h3>HES</h3>
-                        <p>Head-End System for managing energy data and assets.</p>
-                        <a href="/Home/HES" class="btn btn-secondary">Learn More</a>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="service-card">
-                        <i class="fas fa-map-marked-alt"></i>
-                        <h3>GIS</h3>
-                        <p>Geographic Information System for accurate asset tracking.</p>
-                        <a href="/Home/GIS" class="btn btn-secondary">Learn More</a>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="service-card">
-                        <i class="fas fa-network-wired"></i>
-                        <h3>SCADA</h3>
-                        <p>Supervisory Control and Data Acquisition for system monitoring.</p>
-                        <a href="/Home/SCADA" class="btn btn-secondary">Learn More</a>
-                    </div>
+</style>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <h1>Welcome to Adtech Platform</h1>
+        <p>Your all-in-one system for HES, GIS, SCADA, and more!</p>
+        <a href="/Home/Start" class="btn">Get Started</a>
+    </div>
+</section>
+
+<!-- Services Overview Section -->
+<section class="services-overview">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-4">
+                <div class="service-card hes">
+                    <i class="fas fa-sitemap"></i>
+                    <h3>HES</h3>
+                    <p>Head-End System for managing energy data and assets.</p>
+                    <a href="/Home/HES" class="btn">Learn More</a>
                 </div>
             </div>
+
+            <div class="col-md-4">
+                <div class="service-card gis">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h3>GIS</h3>
+                    <p>Geographic Information System for accurate asset tracking.</p>
+                    <a href="/Home/GIS" class="btn">Learn More</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="service-card scada">
+                    <i class="fas fa-network-wired"></i>
+                    <h3>SCADA</h3>
+                    <p>Supervisory Control and Data Acquisition for system monitoring.</p>
+                    <a href="/Home/SCADA" class="btn">Learn More</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="service-card sincal">
+                    <i class="fas fa-cogs"></i>
+                    <h3>SINCAL</h3>
+                    <p>Network planning and simulation with SINCAL.</p>
+                    <a href="/Home/SINCAL" class="btn">Learn More</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="service-card core">
+                    <i class="fas fa-server"></i>
+                    <h3>Core</h3>
+                    <p>Adtech Core Service for system integrations.</p>
+                    <a href="/Home/Core" class="btn">Learn More</a>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="service-card hes">
+                    <i class="fas fa-sitemap"></i>
+                    <h3>HES</h3>
+                    <p>Head-End System for managing energy data and assets.</p>
+                    <button class="btn" data-toggle="modal" data-target="#hesModal">Learn More</button>
+                </div>
+            </div>
+
         </div>
-    </section>
+    </div>
+</section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+<!-- HES Modal -->
+<div class="modal fade" id="hesModal" tabindex="-1" role="dialog" aria-labelledby="hesModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="hesModalLabel">HES - Head-End System</h5>
+@*                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button> *@
+            </div>
+            <div class="modal-body">
+                HES is a comprehensive system that helps manage energy data and assets efficiently. It provides tools for tracking and analyzing energy usage.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 
-</html>
+<!-- Bootstrap CSS -->
+<!-- jQuery and Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

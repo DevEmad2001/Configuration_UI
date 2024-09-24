@@ -26,9 +26,10 @@ namespace GUI_Adtech.Repositories
 
         public async Task AddConfigAsync(AdtechConfig config)
         {
-            _context.Configs.Add(config);
-            await _context.SaveChangesAsync();
+            _context.Configs.Add(config); // إضافة البيانات إلى DbSet
+            await _context.SaveChangesAsync(); // حفظ التغييرات
         }
+
 
         public async Task UpdateConfigAsync(AdtechConfig config)
         {

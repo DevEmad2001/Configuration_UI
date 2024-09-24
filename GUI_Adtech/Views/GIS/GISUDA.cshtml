@@ -10,6 +10,10 @@
             margin-bottom: 15px;
         }
 
+    .hidden {
+        display: none;
+    }
+
     .btn-custom {
         background-color: #001f3f;
         color: white;
@@ -43,7 +47,7 @@
 </style>
 
 <div class="container mt-5">
-    <h2>GISUDA Configuration</h2>
+    <h2>User Defined Attribute Configuration</h2>
     <form id="gisudaForm">
         <!-- Service Section -->
         <div class="form-section">
@@ -68,7 +72,7 @@
         </div>
 
         <!-- Basic Authentication Section -->
-        <div class="form-section">
+        <div id="basicAuthSection" class="form-section hidden">
             <h4>Basic Authentication</h4>
             <div class="mb-3">
                 <label for="basicuserName" class="form-label">Basic Username</label>
@@ -81,23 +85,32 @@
         </div>
 
         <!-- Certificate Information Section -->
-        <div class="form-section">
+        <div id="certificateAuthSection" class="form-section hidden">
             <h4>Certificate Information</h4>
             <div class="mb-3">
                 <label for="certificatePath" class="form-label">Certificate Path</label>
                 <input type="text" class="form-control" id="certificatePath" placeholder="Enter Certificate Path">
             </div>
-            <div class="mb-3">
+@*             <div class="mb-3">
                 <label for="certificateUsername" class="form-label">Certificate Username</label>
                 <input type="text" class="form-control" id="certificateUsername" placeholder="Enter Certificate Username">
-            </div>
+            </div> *@
             <div class="mb-3">
                 <label for="certificatePassword" class="form-label">Certificate Password</label>
                 <input type="password" class="form-control" id="certificatePassword" placeholder="Enter Certificate Password">
             </div>
         </div>
 
-        <!-- Other Information Section -->
+        <!-- Token Information Section -->
+        <div id="tokenAuthSection" class="form-section hidden">
+            <h4>Token Authentication</h4>
+            <div class="mb-3">
+                <label for="token" class="form-label">Enter Token</label>
+                <input type="text" class="form-control" id="token" placeholder="Enter Token">
+            </div>
+        </div>
+
+       @*  <!-- Other Information Section -->
         <div class="form-section">
             <h4>Other Information</h4>
             <div class="mb-3">
@@ -112,7 +125,7 @@
                 <label for="logfilePath" class="form-label">Logfile Path</label>
                 <input type="text" class="form-control" id="logfilePath" placeholder="Enter Logfile Path">
             </div>
-        </div>
+        </div> *@
 
         <!-- Button Section -->
         <div class="button-group">
@@ -121,3 +134,23 @@
         </div>
     </form>
 </div>
+
+<!-- JavaScript to handle form display -->
+<script>
+    document.getElementById('authentication').addEventListener('change', function () {
+        // Hide all authentication sections
+        document.getElementById('basicAuthSection').classList.add('hidden');
+        document.getElementById('certificateAuthSection').classList.add('hidden');
+        document.getElementById('tokenAuthSection').classList.add('hidden');
+
+        // Show the relevant section based on the selected authentication type
+        var authType = this.value;
+        if (authType === 'basic') {
+            document.getElementById('basicAuthSection').classList.remove('hidden');
+        } else if (authType === 'certificate') {
+            document.getElementById('certificateAuthSection').classList.remove('hidden');
+        } else if (authType === 'token') {
+            document.getElementById('tokenAuthSection').classList.remove('hidden');
+        }
+    });
+</script>

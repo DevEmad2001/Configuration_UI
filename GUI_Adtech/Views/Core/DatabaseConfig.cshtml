@@ -1,5 +1,4 @@
-﻿
-<style>
+﻿<style>
     .form-section {
         margin-top: 20px;
         padding: 20px;
@@ -43,47 +42,32 @@
 </style>
 
 <div class="container mt-5">
-    <h2>Service Configuration</h2>
-    <form id="configForm">
-        <!-- First Section -->
+    <h2>Database Configuration</h2>
+    <form id="folderStructureForm">
+        <!-- Server Path Section -->
         <div class="form-section">
+            <h4>Server Path Information</h4>
             <div class="mb-3">
-                <label for="serviceURL" class="form-label">Service URL</label>
-                <input type="text" class="form-control" id="serviceURL" placeholder="Enter Service URL">
+                <label for="serverPath" class="form-label">Server Path</label>
+                <input type="text" class="form-control" id="serverPath" placeholder="Enter Server Path">
             </div>
+
             <div class="mb-3">
-                <label for="binding" class="form-label">Binding</label>
-                <input type="text" class="form-control" id="binding" placeholder="Enter Binding">
-            </div>
-            <div class="mb-3">
-                <label for="authentication" class="form-label">Authentication</label>
-                <select class="form-select" id="authentication">
-                    <option value="" selected disabled>Choose Authentication</option>
-                    <option value="basic">Basic</option>
-                    <option value="certificate">Certificate</option>
-                    <option value="token">Token</option>
-                </select>
-            </div>
-            <div class="mb-3">
-                <label for="protocol" class="form-label">Protocol</label>
-                <input type="text" class="form-control" id="protocol" placeholder="Enter Protocol">
+                <label for="portNumber" class="form-label">Port Number</label>
+                <input type="text" class="form-control" id="protNumber" placeholder="Enter Port Number">
             </div>
         </div>
 
-        <!-- Credential Info Section -->
+        <!-- User Credentials Section -->
         <div class="form-section mt-4">
-            <h4>Credential Info</h4>
+            <h4>User Credentials</h4>
             <div class="mb-3">
-                <label for="dblink" class="form-label">DB Link</label>
-                <input type="text" class="form-control" id="dblink" placeholder="Enter DB Link">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control" id="username" placeholder="Enter Username">
             </div>
             <div class="mb-3">
-                <label for="logfilePath" class="form-label">Logfile Path</label>
-                <input type="text" class="form-control" id="logfilePath" placeholder="Enter Logfile Path">
-            </div>
-            <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input" id="allowEditing">
-                <label class="form-check-label" for="allowEditing">Allow User Editing</label>
+                <label for="password" class="form-label">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Enter Password">
             </div>
         </div>
 
