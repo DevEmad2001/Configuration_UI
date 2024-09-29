@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GUI_Adtech.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240922144504_initialCreate ")]
-    partial class initialCreate
+    [Migration("20240926113010_AddPendingChanges")]
+    partial class AddPendingChanges
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -38,12 +38,7 @@ namespace GUI_Adtech.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<int>("SystemID")
-                        .HasColumnType("int");
-
                     b.HasKey("ComponentID");
-
-                    b.HasIndex("SystemID");
 
                     b.ToTable("Components");
                 });
@@ -55,9 +50,6 @@ namespace GUI_Adtech.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Seq_Id"));
-
-                    b.Property<int>("ComponentID")
-                        .HasColumnType("int");
 
                     b.Property<DateTime>("ModifiesDate")
                         .HasColumnType("datetime2");
@@ -72,8 +64,6 @@ namespace GUI_Adtech.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Seq_Id");
-
-                    b.HasIndex("ComponentID");
 
                     b.ToTable("Configs");
                 });
@@ -94,38 +84,6 @@ namespace GUI_Adtech.Migrations
                     b.HasKey("SystemID");
 
                     b.ToTable("Systems");
-                });
-
-            modelBuilder.Entity("GUI_Adtech.Models.AdtechComponent", b =>
-                {
-                    b.HasOne("GUI_Adtech.Models.AdtechSystem", "System")
-                        .WithMany("Components")
-                        .HasForeignKey("SystemID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("System");
-                });
-
-            modelBuilder.Entity("GUI_Adtech.Models.AdtechConfig", b =>
-                {
-                    b.HasOne("GUI_Adtech.Models.AdtechComponent", "Component")
-                        .WithMany("Configs")
-                        .HasForeignKey("ComponentID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Component");
-                });
-
-            modelBuilder.Entity("GUI_Adtech.Models.AdtechComponent", b =>
-                {
-                    b.Navigation("Configs");
-                });
-
-            modelBuilder.Entity("GUI_Adtech.Models.AdtechSystem", b =>
-                {
-                    b.Navigation("Components");
                 });
 #pragma warning restore 612, 618
         }

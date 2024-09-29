@@ -18,10 +18,11 @@ namespace GUI_Adtech.Models
         [Required]  // التحقق من أن التاريخ مطلوب
         public DateTime ModifiesDate { get; set; }
 
-        [Required]  // المفتاح الأجنبي لـ Component
-        public int ComponentID { get; set; }
+        //[Required]  // المفتاح الأجنبي لـ Component
+        //    public int ComponentID { get; set; }
 
-        [Required]
-        public AdtechComponent Component { get; set; }
+        //    [Required]
+        //    public AdtechComponent Component { get; set; }
+        //}
     }
 }

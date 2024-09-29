@@ -41,40 +41,93 @@
         }
 </style>
 
-<div class="container mt-5">
-    <h2>Database Configuration</h2>
-    <form id="folderStructureForm">
-        <!-- Server Path Section -->
-        <div class="form-section">
-            <h4>Server Path Information</h4>
-            <div class="mb-3">
-                <label for="serverPath" class="form-label">Server Path</label>
-                <input type="text" class="form-control" id="serverPath" placeholder="Enter Server Path">
-            </div>
+@model GUI_Adtech.Models.AdtechConfig
 
-            <div class="mb-3">
-                <label for="portNumber" class="form-label">Port Number</label>
-                <input type="text" class="form-control" id="protNumber" placeholder="Enter Port Number">
-            </div>
+
+@* <form asp-action="SaveConfig" method="post">
+    <!-- Server Path Section -->
+    <div class="form-section">
+        <h4>Server Path Information</h4>
+        <div class="mb-3">
+            <label class="form-label">Server Path</label>
+            <input type="text" class="form-control" name="serverPath" placeholder="Enter Server Path">
         </div>
 
-        <!-- User Credentials Section -->
-        <div class="form-section mt-4">
-            <h4>User Credentials</h4>
-            <div class="mb-3">
-                <label for="username" class="form-label">Username</label>
-                <input type="text" class="form-control" id="username" placeholder="Enter Username">
-            </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password" placeholder="Enter Password">
-            </div>
+        <div class="mb-3">
+            <label class="form-label">Port Number</label>
+            <input type="text" class="form-control" name="portNumber" placeholder="Enter Port Number">
+        </div>
+    </div>
+
+    <!-- User Credentials Section -->
+    <div class="form-section mt-4">
+        <h4>User Credentials</h4>
+        <div class="mb-3">
+            <label class="form-label">Username</label>
+            <input type="text" class="form-control" name="username" placeholder="Enter Username">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Password</label>
+            <input type="password" class="form-control" name="password" placeholder="Enter Password">
+        </div>
+    </div>
+
+    <!-- Button Section -->
+    <div class="button-group">
+        <button type="submit" class="btn btn-custom">Save</button>
+        <button type="button" class="btn btn-cancel">Cancel</button>
+    </div>
+
+    @if (ViewBag.Message != null)
+    {
+        <div id="successMessage" class="alert alert-success mt-2">@ViewBag.Message</div>
+    }
+
+    <script>
+        // باستخدام JavaScript بسيط
+        setTimeout(function () {
+            var messageElement = document.getElementById("successMessage");
+            if (messageElement) {
+                messageElement.style.display = "none"; // إخفاء العنصر بعد 10 ثواني
+            }
+        }, 5000); // 10000 ميلي ثانية = 10 ثواني
+    </script>
+
+</form> *@
+
+
+
+<form asp-action="SaveConfig" method="post">
+    <!-- Server Path Section -->
+    <div class="form-section">
+        <h4>Server Path Information</h4>
+        <div class="mb-3">
+            <label class="form-label">Server Path</label>
+            <input type="text" class="form-control" name="serverPath" placeholder="Enter Server Path">
         </div>
 
-        <!-- Button Section -->
-        <div class="button-group">
-            <button type="submit" class="btn btn-custom">Save</button>
-            <button type="button" class="btn btn-cancel">Cancel</button>
+        <div class="mb-3">
+            <label class="form-label">Port Number</label>
+            <input type="text" class="form-control" name="portNumber" placeholder="Enter Port Number">
         </div>
-    </form>
-</div>
+    </div>
+
+    <!-- User Credentials Section -->
+    <div class="form-section mt-4">
+        <h4>User Credentials</h4>
+        <div class="mb-3">
+            <label class="form-label">Username</label>
+            <input type="text" class="form-control" name="username" placeholder="Enter Username">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Password</label>
+            <input type="password" class="form-control" name="password" placeholder="Enter Password">
+        </div>
+    </div>
+
+    <!-- Button Section -->
+    <div class="button-group">
+        <button type="submit" class="btn btn-custom">Save</button>
+        <button type="button" class="btn btn-cancel">Cancel</button>
+    </div>
+</form>

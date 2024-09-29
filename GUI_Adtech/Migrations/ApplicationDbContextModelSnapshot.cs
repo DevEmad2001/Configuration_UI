@@ -35,34 +35,9 @@ namespace GUI_Adtech.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<int>("SystemID")
-                        .HasColumnType("int");
-
                     b.HasKey("ComponentID");
 
-                    b.HasIndex("SystemID");
-
                     b.ToTable("Components");
-
-                    b.HasData(
-                        new
-                        {
-                            ComponentID = 1,
-                            ComponentName = "MeterInstallation",
-                            SystemID = 1
-                        },
-                        new
-                        {
-                            ComponentID = 2,
-                            ComponentName = "DailyReading",
-                            SystemID = 1
-                        },
-                        new
-                        {
-                            ComponentID = 3,
-                            ComponentName = "NetworkGISNode",
-                            SystemID = 2
-                        });
                 });
 
             modelBuilder.Entity("GUI_Adtech.Models.AdtechConfig", b =>
@@ -72,9 +47,6 @@ namespace GUI_Adtech.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Seq_Id"));
-
-                    b.Property<int>("ComponentID")
-                        .HasColumnType("int");
 
                     b.Property<DateTime>("ModifiesDate")
                         .HasColumnType("datetime2");
@@ -90,35 +62,7 @@ namespace GUI_Adtech.Migrations
 
                     b.HasKey("Seq_Id");
 
-                    b.HasIndex("ComponentID");
-
                     b.ToTable("Configs");
-
-                    b.HasData(
-                        new
-                        {
-                            Seq_Id = 1,
-                            ComponentID = 1,
-                            ModifiesDate = new DateTime(2024, 9, 22, 17, 47, 58, 341, DateTimeKind.Local).AddTicks(6279),
-                            ParameterName = "ServiceURL",
-                            ParameterValue = "http://example.com"
-                        },
-                        new
-                        {
-                            Seq_Id = 2,
-                            ComponentID = 1,
-                            ModifiesDate = new DateTime(2024, 9, 22, 17, 47, 58, 345, DateTimeKind.Local).AddTicks(6279),
-                            ParameterName = "LogfilePath",
-                            ParameterValue = "C:/logs"
-                        },
-                        new
-                        {
-                            Seq_Id = 3,
-                            ComponentID = 3,
-                            ModifiesDate = new DateTime(2024, 9, 22, 17, 47, 58, 345, DateTimeKind.Local).AddTicks(6296),
-                            ParameterName = "ServiceURL",
-                            ParameterValue = "http://gis.example.com"
-                        });
                 });
 
             modelBuilder.Entity("GUI_Adtech.Models.AdtechSystem", b =>
@@ -137,65 +81,6 @@ namespace GUI_Adtech.Migrations
                     b.HasKey("SystemID");
 
                     b.ToTable("Systems");
-
-                    b.HasData(
-                        new
-                        {
-                            SystemID = 1,
-                            SystemName = "HES"
-                        },
-                        new
-                        {
-                            SystemID = 2,
-                            SystemName = "GIS"
-                        },
-                        new
-                        {
-                            SystemID = 3,
-                            SystemName = "SCADA"
-                        },
-                        new
-                        {
-                            SystemID = 4,
-                            SystemName = "SINCAL"
-                        },
-                        new
-                        {
-                            SystemID = 5,
-                            SystemName = "Core"
-                        });
-                });
-
-            modelBuilder.Entity("GUI_Adtech.Models.AdtechComponent", b =>
-                {
-                    b.HasOne("GUI_Adtech.Models.AdtechSystem", "System")
-                        .WithMany("Components")
-                        .HasForeignKey("SystemID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("System");
-                });
-
-            modelBuilder.Entity("GUI_Adtech.Models.AdtechConfig", b =>
-                {
-                    b.HasOne("GUI_Adtech.Models.AdtechComponent", "Component")
-                        .WithMany("Configs")
-                        .HasForeignKey("ComponentID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Component");
-                });
-
-            modelBuilder.Entity("GUI_Adtech.Models.AdtechComponent", b =>
-                {
-                    b.Navigation("Configs");
-                });
-
-            modelBuilder.Entity("GUI_Adtech.Models.AdtechSystem", b =>
-                {
-                    b.Navigation("Components");
                 });
 #pragma warning restore 612, 618
         }

@@ -12,6 +12,6 @@ namespace GUI_Adtech.Models
         [StringLength(100, ErrorMessage = "System Name cannot be longer than 100 characters")]
         public string SystemName { get; set; }
 
-        public ICollection<AdtechComponent> Components { get; set; }
+        //public ICollection<AdtechComponent> Components { get; set; }
     }
 }

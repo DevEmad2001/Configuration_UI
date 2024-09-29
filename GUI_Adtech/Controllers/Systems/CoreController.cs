@@ -24,20 +24,104 @@ namespace GUI_Adtech.Controllers.Systems
             return View();
         }
 
+
+
+        //[HttpPost]
+        //public async Task<IActionResult> SaveConfig(string serverPath, string portNumber, string username, string password)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        // حفظ Server Path
+        //        var configServerPath = new AdtechConfig
+        //        {
+        //            ParameterName = "Server Path", // اسم الحقل
+        //            ParameterValue = serverPath, // القيمة المدخلة من المستخدم
+        //            ModifiesDate = DateTime.Now // الوقت الحالي
+        //        };
+        //        await _configRepository.AddConfigAsync(configServerPath);
+
+        //        // حفظ Port Number
+        //        var configPortNumber = new AdtechConfig
+        //        {
+        //            ParameterName = "Port Number",
+        //            ParameterValue = portNumber,
+        //            ModifiesDate = DateTime.Now
+        //        };
+        //        await _configRepository.AddConfigAsync(configPortNumber);
+
+        //        // حفظ Username
+        //        var configUsername = new AdtechConfig
+        //        {
+        //            ParameterName = "Username",
+        //            ParameterValue = username,
+        //            ModifiesDate = DateTime.Now
+        //        };
+        //        await _configRepository.AddConfigAsync(configUsername);
+
+        //        // حفظ Password
+        //        var configPassword = new AdtechConfig
+        //        {
+        //            ParameterName = "Password",
+        //            ParameterValue = password,
+        //            ModifiesDate = DateTime.Now
+        //        };
+        //        await _configRepository.AddConfigAsync(configPassword);
+
+        //        // عرض رسالة نجاح
+        //        ViewBag.Message = "Configuration saved successfully!";
+        //        return View("DatabaseConfig");
+        //    }
+
+        //    return View("DatabaseConfig");
+        //}
+
         [HttpPost]
-        public async Task<IActionResult> SaveConfig(AdtechConfig config)
+        public async Task<IActionResult> SaveConfig(string serverPath, string portNumber, string username, string password)
         {
             if (ModelState.IsValid)
             {
-                // تتبع البيانات المدخلة
-                Console.WriteLine($"ParameterName: {config.ParameterName}, ParameterValue: {config.ParameterValue}, ComponentID: {config.ComponentID}");
+                // تحديث أو إضافة ServerPath
+                var configServerPath = await _configRepository.GetConfigByParameterNameAsync("ServerPath");
+                if (configServerPath != null)
+                {
+                    configServerPath.ParameterValue = serverPath;
+                    configServerPath.ModifiesDate = DateTime.Now;
+                    await _configRepository.UpdateConfigAsync(configServerPath);
+                }
 
-                config.ModifiesDate = DateTime.Now; // تعيين تاريخ التعديل
-                await _configRepository.AddConfigAsync(config);
-                ViewBag.Message = "Configuration saved successfully!";
-                return View("DatabaseConfig", config);
+                // تحديث أو إضافة PortNumber
+                var configPortNumber = await _configRepository.GetConfigByParameterNameAsync("PortNumber");
+                if (configPortNumber != null)
+                {
+                    configPortNumber.ParameterValue = portNumber;
+                    configPortNumber.ModifiesDate = DateTime.Now;
+                    await _configRepository.UpdateConfigAsync(configPortNumber);
+                }
+
+                // تحديث أو إضافة Username
+                var configUsername = await _configRepository.GetConfigByParameterNameAsync("Username");
+                if (configUsername != null)
+                {
+                    configUsername.ParameterValue = username;
+                    configUsername.ModifiesDate = DateTime.Now;
+                    await _configRepository.UpdateConfigAsync(configUsername);
+                }
+
+                // تحديث أو إضافة Password
+                var configPassword = await _configRepository.GetConfigByParameterNameAsync("Password");
+                if (configPassword != null)
+                {
+                    configPassword.ParameterValue = password;
+                    configPassword.ModifiesDate = DateTime.Now;
+                    await _configRepository.UpdateConfigAsync(configPassword);
+                }
+
+                // عرض رسالة نجاح
+                ViewBag.Message = "Configuration updated successfully!";
+                return View("DatabaseConfig");
             }
-            return View("DatabaseConfig", config);
+
+            return View("DatabaseConfig");
         }
 
 

@@ -12,12 +12,12 @@ namespace GUI_Adtech.Models
         [StringLength(100, ErrorMessage = "Component Name cannot be longer than 100 characters")]
         public string ComponentName { get; set; }
 
-        [Required]  // المفتاح الأجنبي يجب أن يكون موجود
-        public int SystemID { get; set; }
+        //[Required]  // المفتاح الأجنبي يجب أن يكون موجود
+        //public int SystemID { get; set; }
 
-        [Required]  // التأكد من أن الـ System مربوط بشكل صحيح
-        public AdtechSystem System { get; set; }
+        //[Required]  // التأكد من أن الـ System مربوط بشكل صحيح
+        //public AdtechSystem System { get; set; }
 
-        public ICollection<AdtechConfig> Configs { get; set; }
+        //public ICollection<AdtechConfig> Configs { get; set; }
     }
 }

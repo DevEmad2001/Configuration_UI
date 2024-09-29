@@ -14,6 +14,16 @@ namespace GUI_Adtech.Repositories
             _context = context;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="parameterName"></param>
+        /// <returns></returns>
+        public async Task<AdtechConfig> GetConfigByParameterNameAsync(string parameterName)
+        {
+            return await _context.Configs.FirstOrDefaultAsync(c => c.ParameterName == parameterName);
+        }
+
         public async Task<IEnumerable<AdtechConfig>> GetAllConfigsAsync()
         {
             return await _context.Configs.ToListAsync();
@@ -24,16 +34,18 @@ namespace GUI_Adtech.Repositories
             return await _context.Configs.FindAsync(id);
         }
 
+
         public async Task AddConfigAsync(AdtechConfig config)
         {
-            _context.Configs.Add(config); // إضافة البيانات إلى DbSet
+            _context.Add(config); // إضافة البيانات إلى DbSet
             await _context.SaveChangesAsync(); // حفظ التغييرات
         }
 
 
         public async Task UpdateConfigAsync(AdtechConfig config)
         {
-            _context.Configs.Update(config);
+            _context.Update(config);
+
             await _context.SaveChangesAsync();
         }
 
