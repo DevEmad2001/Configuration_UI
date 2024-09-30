@@ -16,12 +16,16 @@ namespace GUI_Adtech.Repositories
 
         /// <summary>
         /// 
-        /// </summary>
+        /// </summary>.
         /// <param name="parameterName"></param>
         /// <returns></returns>
-        public async Task<AdtechConfig> GetConfigByParameterNameAsync(string parameterName)
+        public async Task<AdtechConfig> GetConfigByParameterNameAsync(string parameterName) // DataBase (Core)
         {
             return await _context.Configs.FirstOrDefaultAsync(c => c.ParameterName == parameterName);
+        }
+        public async Task<AdtechConfig> GetConfigByParameterAndComponentAsync(string parameterName, string componentName) //Folder Structer Code (Core) 
+        {
+            return await _context.Configs.FirstOrDefaultAsync(c => c.ParameterName == parameterName && c.ComponentName == componentName);
         }
 
         public async Task<IEnumerable<AdtechConfig>> GetAllConfigsAsync()

@@ -18,6 +18,10 @@ namespace GUI_Adtech.Models
         [Required]  // التحقق من أن التاريخ مطلوب
         public DateTime ModifiesDate { get; set; }
 
+        // العمود الجديد لاسم المكون
+        [Required(ErrorMessage = "Component Name is required")]
+        [StringLength(100)]
+        public string ComponentName { get; set; }
         //[Required]  // المفتاح الأجنبي لـ Component
         //    public int ComponentID { get; set; }
 
