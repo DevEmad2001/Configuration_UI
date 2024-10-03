@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\GUI_Adtech_V2.props" />
+</Project>
