@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\Lenovo\\source\\repos\\Configuration_UI\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{578116AB-7576-411C-80DF-12776E799F3C}|GUI_Adtech\\GUI_Adtech.csproj|c:\\users\\lenovo\\source\\repos\\configuration_ui\\gui_adtech\\gui_adtech.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{578116AB-7576-411C-80DF-12776E799F3C}|GUI_Adtech\\GUI_Adtech.csproj|solutionrelative:gui_adtech\\gui_adtech.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{4E2EBA8F-0C51-4723-9E51-56893D82C21F}|GUI_Adtech_V2\\GUI_Adtech_V2.csproj|c:\\users\\lenovo\\source\\repos\\configuration_ui\\gui_adtech_v2\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{4E2EBA8F-0C51-4723-9E51-56893D82C21F}|GUI_Adtech_V2\\GUI_Adtech_V2.csproj|solutionrelative:gui_adtech_v2\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -11,12 +15,28 @@
       "RelativeMoniker": "D:0:0:{4E2EBA8F-0C51-4723-9E51-56893D82C21F}|GUI_Adtech_V2\\GUI_Adtech_V2.csproj|solutionrelative:gui_adtech_v2\\views\\core\\databaseconfig.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{578116AB-7576-411C-80DF-12776E799F3C}|GUI_Adtech\\GUI_Adtech.csproj|c:\\users\\lenovo\\source\\repos\\configuration_ui\\gui_adtech\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{578116AB-7576-411C-80DF-12776E799F3C}|GUI_Adtech\\GUI_Adtech.csproj|solutionrelative:gui_adtech\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{4E2EBA8F-0C51-4723-9E51-56893D82C21F}|GUI_Adtech_V2\\GUI_Adtech_V2.csproj|c:\\users\\lenovo\\source\\repos\\configuration_ui\\gui_adtech_v2\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{4E2EBA8F-0C51-4723-9E51-56893D82C21F}|GUI_Adtech_V2\\GUI_Adtech_V2.csproj|solutionrelative:gui_adtech_v2\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E2EBA8F-0C51-4723-9E51-56893D82C21F}|GUI_Adtech_V2\\GUI_Adtech_V2.csproj|c:\\users\\lenovo\\source\\repos\\configuration_ui\\gui_adtech_v2\\areas\\identity\\pages\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4E2EBA8F-0C51-4723-9E51-56893D82C21F}|GUI_Adtech_V2\\GUI_Adtech_V2.csproj|solutionrelative:gui_adtech_v2\\areas\\identity\\pages\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4E2EBA8F-0C51-4723-9E51-56893D82C21F}|GUI_Adtech_V2\\GUI_Adtech_V2.csproj|c:\\users\\lenovo\\source\\repos\\configuration_ui\\gui_adtech_v2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{4E2EBA8F-0C51-4723-9E51-56893D82C21F}|GUI_Adtech_V2\\GUI_Adtech_V2.csproj|solutionrelative:gui_adtech_v2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E2EBA8F-0C51-4723-9E51-56893D82C21F}|GUI_Adtech_V2\\GUI_Adtech_V2.csproj|c:\\users\\lenovo\\source\\repos\\configuration_ui\\gui_adtech_v2\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4E2EBA8F-0C51-4723-9E51-56893D82C21F}|GUI_Adtech_V2\\GUI_Adtech_V2.csproj|solutionrelative:gui_adtech_v2\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E2EBA8F-0C51-4723-9E51-56893D82C21F}|GUI_Adtech_V2\\GUI_Adtech_V2.csproj|c:\\users\\lenovo\\source\\repos\\configuration_ui\\gui_adtech_v2\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E2EBA8F-0C51-4723-9E51-56893D82C21F}|GUI_Adtech_V2\\GUI_Adtech_V2.csproj|solutionrelative:gui_adtech_v2\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{578116AB-7576-411C-80DF-12776E799F3C}|GUI_Adtech\\GUI_Adtech.csproj|c:\\users\\lenovo\\source\\repos\\configuration_ui\\gui_adtech\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{578116AB-7576-411C-80DF-12776E799F3C}|GUI_Adtech\\GUI_Adtech.csproj|solutionrelative:gui_adtech\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4E2EBA8F-0C51-4723-9E51-56893D82C21F}|GUI_Adtech_V2\\GUI_Adtech_V2.csproj|c:\\users\\lenovo\\source\\repos\\configuration_ui\\gui_adtech_v2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
@@ -54,7 +74,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -83,6 +103,18 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\Configuration_UI\\GUI_Adtech_V2\\Areas\\Identity\\Pages\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "GUI_Adtech_V2\\Areas\\Identity\\Pages\\_ViewStart.cshtml",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\Configuration_UI\\GUI_Adtech_V2\\Areas\\Identity\\Pages\\_ViewStart.cshtml",
+              "RelativeToolTip": "GUI_Adtech_V2\\Areas\\Identity\\Pages\\_ViewStart.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-03T15:48:10.4Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "bootstrap-reboot.css",
               "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\Configuration_UI\\GUI_Adtech_V2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
               "RelativeDocumentMoniker": "GUI_Adtech_V2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
@@ -90,25 +122,96 @@
               "RelativeToolTip": "GUI_Adtech_V2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-10-02T11:22:16.492Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-02T11:22:16.492Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "DatabaseConfig.cshtml",
               "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\Configuration_UI\\GUI_Adtech_V2\\Views\\Core\\DatabaseConfig.cshtml",
               "RelativeDocumentMoniker": "GUI_Adtech_V2\\Views\\Core\\DatabaseConfig.cshtml",
               "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\Configuration_UI\\GUI_Adtech_V2\\Views\\Core\\DatabaseConfig.cshtml",
               "RelativeToolTip": "GUI_Adtech_V2\\Views\\Core\\DatabaseConfig.cshtml",
-              "ViewState": "AQIAAJwAAAAAAAAAAAAIwLkAAAAAAAAA",
+              "ViewState": "AQIAAAgBAAAAAAAAAAAAAAYBAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-02T08:38:03.334Z",
+              "WhenOpened": "2024-10-02T08:38:03.334Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\Configuration_UI\\GUI_Adtech_V2\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "GUI_Adtech_V2\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\Configuration_UI\\GUI_Adtech_V2\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "GUI_Adtech_V2\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAC0BAAAAAAAAAAAQwDcBAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-01T10:39:37.182Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GUI_Adtech.csproj",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\Configuration_UI\\GUI_Adtech\\GUI_Adtech.csproj",
+              "RelativeDocumentMoniker": "GUI_Adtech\\GUI_Adtech.csproj",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\Configuration_UI\\GUI_Adtech\\GUI_Adtech.csproj",
+              "RelativeToolTip": "GUI_Adtech\\GUI_Adtech.csproj",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAACsAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-10-05T11:31:46.615Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 7,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\Configuration_UI\\GUI_Adtech_V2\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "GUI_Adtech_V2\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\Configuration_UI\\GUI_Adtech_V2\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "GUI_Adtech_V2\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAgwCAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T15:51:12.373Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\Configuration_UI\\GUI_Adtech_V2\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "GUI_Adtech_V2\\wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\Configuration_UI\\GUI_Adtech_V2\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "GUI_Adtech_V2\\wwwroot\\css\\site.css",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-10-06T08:43:34.522Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "bootstrap.css",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\Configuration_UI\\GUI_Adtech_V2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+              "RelativeDocumentMoniker": "GUI_Adtech_V2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\Configuration_UI\\GUI_Adtech_V2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+              "RelativeToolTip": "GUI_Adtech_V2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+              "ViewState": "AQIAAAMBAAAAAAAAAAD4vxUBAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-10-02T11:28:30.372Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "_LoginPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\Configuration_UI\\GUI_Adtech_V2\\Views\\Shared\\_LoginPartial.cshtml",
+              "RelativeDocumentMoniker": "GUI_Adtech_V2\\Views\\Shared\\_LoginPartial.cshtml",
+              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\Configuration_UI\\GUI_Adtech_V2\\Views\\Shared\\_LoginPartial.cshtml",
+              "RelativeToolTip": "GUI_Adtech_V2\\Views\\Shared\\_LoginPartial.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-03T15:51:53.256Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\Configuration_UI\\GUI_Adtech\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "GUI_Adtech\\Views\\Shared\\_Layout.cshtml",
@@ -116,38 +219,11 @@
               "RelativeToolTip": "GUI_Adtech\\Views\\Shared\\_Layout.cshtml",
               "ViewState": "AQIAACQAAAAAAAAAAAAAAAoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-01T12:13:09.309Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-01T12:13:09.309Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\Configuration_UI\\GUI_Adtech_V2\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "GUI_Adtech_V2\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\Configuration_UI\\GUI_Adtech_V2\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "GUI_Adtech_V2\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAAPAAAAAAAAAAAAAAAAkBAAAxAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-01T10:39:37.182Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "bootstrap.css",
-              "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\Configuration_UI\\GUI_Adtech_V2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
-              "RelativeDocumentMoniker": "GUI_Adtech_V2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
-              "ToolTip": "C:\\Users\\Lenovo\\source\\repos\\Configuration_UI\\GUI_Adtech_V2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
-              "RelativeToolTip": "GUI_Adtech_V2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
-              "ViewState": "AQIAAHARAAAAAAAAAAAhwHoRAAAYAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-10-02T11:28:30.372Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 11,
               "Title": "SINCALController.cs",
               "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\Configuration_UI\\GUI_Adtech_V2\\Controllers\\SINCALController.cs",
               "RelativeDocumentMoniker": "GUI_Adtech_V2\\Controllers\\SINCALController.cs",
@@ -155,12 +231,11 @@
               "RelativeToolTip": "GUI_Adtech_V2\\Controllers\\SINCALController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-02T08:31:31.427Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-02T08:31:31.427Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 10,
               "Title": "DatabaseConfig.cshtml",
               "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\Configuration_UI\\GUI_Adtech\\Views\\Core\\DatabaseConfig.cshtml",
               "RelativeDocumentMoniker": "GUI_Adtech\\Views\\Core\\DatabaseConfig.cshtml",
@@ -168,12 +243,11 @@
               "RelativeToolTip": "GUI_Adtech\\Views\\Core\\DatabaseConfig.cshtml",
               "ViewState": "AQIAAMYAAAAAAAAAAADwv+QAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-02T08:40:49.364Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-02T08:40:49.364Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 13,
               "Title": "GISController.cs",
               "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\Configuration_UI\\GUI_Adtech_V2\\Controllers\\GISController.cs",
               "RelativeDocumentMoniker": "GUI_Adtech_V2\\Controllers\\GISController.cs",
@@ -181,12 +255,11 @@
               "RelativeToolTip": "GUI_Adtech_V2\\Controllers\\GISController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-02T08:30:13.711Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-02T08:30:13.711Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 12,
               "Title": "SCADAController.cs",
               "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\Configuration_UI\\GUI_Adtech_V2\\Controllers\\SCADAController.cs",
               "RelativeDocumentMoniker": "GUI_Adtech_V2\\Controllers\\SCADAController.cs",
@@ -194,12 +267,11 @@
               "RelativeToolTip": "GUI_Adtech_V2\\Controllers\\SCADAController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-02T08:30:30.383Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-02T08:30:30.383Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 15,
               "Title": "bootstrap.css",
               "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\Configuration_UI\\GUI_Adtech\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
               "RelativeDocumentMoniker": "GUI_Adtech\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
@@ -211,7 +283,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 14,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Lenovo\\source\\repos\\Configuration_UI\\GUI_Adtech_V2\\Program.cs",
               "RelativeDocumentMoniker": "GUI_Adtech_V2\\Program.cs",

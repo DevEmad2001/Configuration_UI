@@ -1,5 +1,8 @@
 html {
-  font-size: 14px;
+  font-size: 16px;
+}
+html {
+    font-family:"PT Serif";
 }
 
 @media (min-width: 768px) {

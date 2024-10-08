@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "GJN/8eHJrD7Hqo373JCA5UBB/8Kp82iJx0BSKyOs9BU=",
+  "Hash": "FHD39reBJM1mD6KY7l05NAubUn5guojdgITsrBmeqZg=",
   "Source": "GUI_Adtech_V2",
   "BasePath": "_content/GUI_Adtech_V2",
   "Mode": "Default",
@@ -1333,8 +1333,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "7mqghf6346",
-      "Integrity": "v1fAvKqFAl0fWhRL/AvIRz3iLCBvy+kfYK/3jXzJYbM=",
+      "Fingerprint": "b0syq4sso6",
+      "Integrity": "tZOdMxEkZcqCgoZtNWwwFk5ci5AXAIxpaqQ33wTTLZo=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -1417,8 +1417,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "o1haz0s520",
-      "Integrity": "NIgoZHpSRWWpBif6sl82X2z0khL27/9YU4E4bo++tiA=",
+      "Fingerprint": "axjdu6s0ks",
+      "Integrity": "4uOLo433ayvqUxevj99vrwUt7PcymyRM3GqH/tN4fz4=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css"
@@ -2602,7 +2602,7 @@
   ],
   "Endpoints": [
     {
-      "Route": "css/site.7mqghf6346.css",
+      "Route": "css/site.b0syq4sso6.css",
       "AssetFile": "C:\\Users\\Lenovo\\source\\repos\\Configuration_UI\\GUI_Adtech_V2\\wwwroot\\css\\site.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -2612,7 +2612,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "433"
+          "Value": "473"
         },
         {
           "Name": "Content-Type",
@@ -2620,11 +2620,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"v1fAvKqFAl0fWhRL/AvIRz3iLCBvy+kfYK/3jXzJYbM=\""
+          "Value": "\"tZOdMxEkZcqCgoZtNWwwFk5ci5AXAIxpaqQ33wTTLZo=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 01 Oct 2024 12:18:48 GMT"
+          "Value": "Sun, 06 Oct 2024 11:08:09 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2634,7 +2634,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "7mqghf6346"
+          "Value": "b0syq4sso6"
         },
         {
           "Name": "label",
@@ -2642,7 +2642,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-v1fAvKqFAl0fWhRL/AvIRz3iLCBvy+kfYK/3jXzJYbM="
+          "Value": "sha256-tZOdMxEkZcqCgoZtNWwwFk5ci5AXAIxpaqQ33wTTLZo="
         }
       ]
     },
@@ -2657,7 +2657,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "433"
+          "Value": "473"
         },
         {
           "Name": "Content-Type",
@@ -2665,11 +2665,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"v1fAvKqFAl0fWhRL/AvIRz3iLCBvy+kfYK/3jXzJYbM=\""
+          "Value": "\"tZOdMxEkZcqCgoZtNWwwFk5ci5AXAIxpaqQ33wTTLZo=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 01 Oct 2024 12:18:48 GMT"
+          "Value": "Sun, 06 Oct 2024 11:08:09 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2679,7 +2679,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-v1fAvKqFAl0fWhRL/AvIRz3iLCBvy+kfYK/3jXzJYbM="
+          "Value": "sha256-tZOdMxEkZcqCgoZtNWwwFk5ci5AXAIxpaqQ33wTTLZo="
         }
       ]
     },
@@ -5314,6 +5314,51 @@
       ]
     },
     {
+      "Route": "lib/bootstrap/dist/css/bootstrap.axjdu6s0ks.css",
+      "AssetFile": "C:\\Users\\Lenovo\\source\\repos\\Configuration_UI\\GUI_Adtech_V2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "342290"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4uOLo433ayvqUxevj99vrwUt7PcymyRM3GqH/tN4fz4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 06 Oct 2024 08:46:05 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "axjdu6s0ks"
+        },
+        {
+          "Name": "label",
+          "Value": "lib/bootstrap/dist/css/bootstrap.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-4uOLo433ayvqUxevj99vrwUt7PcymyRM3GqH/tN4fz4="
+        }
+      ]
+    },
+    {
       "Route": "lib/bootstrap/dist/css/bootstrap.css",
       "AssetFile": "C:\\Users\\Lenovo\\source\\repos\\Configuration_UI\\GUI_Adtech_V2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "Selectors": [],
@@ -5332,11 +5377,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"NIgoZHpSRWWpBif6sl82X2z0khL27/9YU4E4bo++tiA=\""
+          "Value": "\"4uOLo433ayvqUxevj99vrwUt7PcymyRM3GqH/tN4fz4=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 01 Oct 2024 10:39:47 GMT"
+          "Value": "Sun, 06 Oct 2024 08:46:05 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -5346,7 +5391,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-NIgoZHpSRWWpBif6sl82X2z0khL27/9YU4E4bo++tiA="
+          "Value": "sha256-4uOLo433ayvqUxevj99vrwUt7PcymyRM3GqH/tN4fz4="
         }
       ]
     },
@@ -5593,51 +5638,6 @@
         {
           "Name": "integrity",
           "Value": "sha256-gBwg2tmA0Ci2u54gMF1jNCVku6vznarkLS6D76htNNQ="
-        }
-      ]
-    },
-    {
-      "Route": "lib/bootstrap/dist/css/bootstrap.o1haz0s520.css",
-      "AssetFile": "C:\\Users\\Lenovo\\source\\repos\\Configuration_UI\\GUI_Adtech_V2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "342290"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"NIgoZHpSRWWpBif6sl82X2z0khL27/9YU4E4bo++tiA=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Tue, 01 Oct 2024 10:39:47 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "o1haz0s520"
-        },
-        {
-          "Name": "label",
-          "Value": "lib/bootstrap/dist/css/bootstrap.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-NIgoZHpSRWWpBif6sl82X2z0khL27/9YU4E4bo++tiA="
         }
       ]
     },

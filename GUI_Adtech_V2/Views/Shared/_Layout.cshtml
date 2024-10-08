@@ -220,7 +220,7 @@
     <style>
         body {
             margin: 0;
-            font-family: "Lato", sans-serif;
+            font-family: "PT Serif";
         }
 
         /* Sidebar styling */
@@ -232,38 +232,46 @@
             height: 100%;
             background-color: #263a59;
             overflow-x: hidden;
-            padding-top: 20px;
-            text-align: center;
+            padding-top: 20px; /* يمكنك ضبط المسافة حسب الحاجة */
+            text-align: center; /* يجعل المحتوى في المنتصف */
         }
 
             .sidebar img {
-                width: 180px;
-                height: auto;
-                margin-bottom: 40px;
+                padding:10px 0;
+                width: 180px; /* عرض الشعار */
+                height: auto; /* الحفاظ على نسبة العرض إلى الارتفاع */
+                margin: 0 26px 40px; /* جعل الهوامش الأفقية تلقائية لجعل الصورة في المنتصف، مع إضافة 40 بكسل في الأسفل */
+                display: block; /* التأكد من أن الصورة كعنصر كتلي */
             }
+
+
+
+        /* margin-bottom: 50px; */
 
             .sidebar a {
                 display: flex;
-                justify-content: space-between;
+                justify-content: start  ;
                 align-items: center;
-                padding: 20px;
+                padding: 7px 24px;
                 text-decoration: none;
                 color: white;
                 font-size: 16px;
                 white-space: normal; /* للسماح بالتفاف النص الطويل */
                 word-wrap: break-word; /* لفصل الكلمات إذا كانت طويلة جدًا */
             }
+            /*justify-content: space-between;*/ 
+            /*padding: 20px;*/
 
                 .sidebar a i {
                     margin-right: 10px;
-                }
+                }/* 18px */
 
                 .sidebar a.active {
                     background-color: orange;
                 }
 
                 .sidebar a:hover:not(.active) {
-                    background-color: #87b4c6; /* hover color royalblue */
+                    background-color:grey; /* hover color royalblue #87b4c6 */
                 }
 
                 .sidebar a .arrow {
@@ -284,8 +292,10 @@
                 padding: 10px 16px;
                 text-decoration: none;
                 color: white;
-                font-size: 18px;
+                font-size: 16px;
             }
+
+            /*font-size: 18px;*/
 
                 .dropdown-container a:hover {
                     background-color: #495d7f;
@@ -302,13 +312,19 @@
         .header {
             position: fixed;
             top: 0;
-            left: 280px;
+            left :330px; 
+            height:70px;
+            /* left: 280px;  */            
             right: 0;
-            height: 56px;
-            background-color: #263a59;
+           /*  height: 56px; */   
+            background-color: #222b33;
             color: white;
-            padding: 10px;
+            padding: 10px; 
+            
         }
+
+        /* #263a59 */
+
 
         /* Footer styling */
         .footer {
@@ -328,8 +344,25 @@
         }
 
         main {
-            padding-top: 70px;
+            padding-top: 48px;
         }
+
+/*         .sidebar a .arrow {
+            margin-left: 10px; 
+            transition: transform 0.3s ease;
+        } */
+
+        .sidebar h3 {
+            margin: 0px 0; /* الهوامش حول العنوان */
+            font-size: 20px; /* حجم الخط */
+            text-align: left; /* توسيط العنوان */
+            padding:10px;
+            margin-left:6%;
+            text-transform:uppercase;
+            font-weight : bold;
+            
+        }
+
     </style>
 </head>
 
@@ -337,30 +370,31 @@
     <!-- Sidebar -->
     <div class="sidebar">
         <img src="~/images/adtech.png" alt="Logo">
-        <a class="dropdown-btn"><i class="fas fa-cogs"></i> Adtech Core Service <i class="fas fa-chevron-right arrow"></i></a>
+        <h3 style="color: #48bcbc; margin-right: 18px  ;">SYSTEMS</h3> <!-- العنوان الجديد -->
+        <a class="dropdown-btn"><i class="fas fa-cogs"></i> Adtech Core Service <i class="fas fa-chevron-right arrow" style="margin:10px"></i></a>
         <div class="dropdown-container">
             <a asp-controller="Core" asp-action="DatabaseConfig">Database Config</a>
             <a href="#core2">Folder Structure</a>
             <a href="#core2">SFTP Connector</a>
             <a href="#core2">XML Validation</a>
         </div>
-        <a class="dropdown-btn"><i class="fas fa-clipboard-list"></i> Head-End System <i class="fas fa-chevron-right arrow"></i></a>
+        <a class="dropdown-btn"><i class="fas fa-clipboard-list"></i> Head-End System <i class="fas fa-chevron-right arrow" style="margin:10px"></i></a>
         <div class="dropdown-container">
             <a href="#hes1">Meter Installation</a>
             <a href="#hes2">Daily Reading</a>
             <a href="#hes1">Control Service</a>
             <a href="#hes2">Data Service</a>
         </div>
-        <a class="dropdown-btn"><i class="fas fa-globe"></i> Geographic Information System <i class="fas fa-chevron-right arrow"></i></a>
+        <a class="dropdown-btn"><i class="fas fa-globe"></i> Geographic Information <i class="fas fa-chevron-right arrow" style="margin:10px"></i></a>
         <div class="dropdown-container">
             <a href="#gis1">User Defined Attribute</a>
             <a href="#gis2">Network GIS Node</a>
         </div>
-        <a class="dropdown-btn"><i class="fas fa-server"></i> SCADA <i class="fas fa-chevron-right arrow"></i></a>
+        <a class="dropdown-btn"><i class="fas fa-server"></i> SCADA <i class="fas fa-chevron-right arrow" style="margin:10px"></i></a>
         <div class="dropdown-container">
             <a href="#scada1">Network Meter</a>
         </div>
-        <a class="dropdown-btn"><i class="fas fa-network-wired"></i> SINCAL <i class="fas fa-chevron-right arrow"></i></a>
+        <a class="dropdown-btn"><i class="fas fa-network-wired"></i> SINCAL <i class="fas fa-chevron-right arrow" style="margin:10px"></i></a>
         <div class="dropdown-container">
             <a href="#sincal1">Feeders</a>
             <a href="#sincal2">Transformers</a>
@@ -370,7 +404,9 @@
     <!-- Header -->
     <div class="header">
         <h2></h2>
-    </div>
+    </div> 
+
+
 
     <!-- Main content -->
     <div class="main-content">
