@@ -402,10 +402,20 @@
     </div>
 
     <!-- Header -->
-    <div class="header">
+@*     <div class="header">
         <h2></h2>
     </div> 
+ *@
+    <!-- Header -->
+    <div class="header d-flex justify-content-between align-items-center">
+        <h2 style="background:#263a59"></h2>
+        <!-- أزرار تسجيل الدخول وإنشاء حساب -->
+        <div class="header-buttons" style="margin-right: 20px;">
+            <a asp-area="Identity" asp-page="/Account/Login" class="btn btn-primary" style="margin-right: 10px;">Login</a>
+            <a asp-area="Identity" asp-page="/Account/Register" class="btn btn-secondary">Sign Up</a>
+        </div>
 
+    </div>
 
 
     <!-- Main content -->
@@ -420,7 +430,7 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 
-    <script>
+@*     <script>
         var dropdowns = document.getElementsByClassName("dropdown-btn");
         for (var i = 0; i < dropdowns.length; i++) {
             dropdowns[i].addEventListener("click", function () {
@@ -433,6 +443,40 @@
                 }
             });
         }
+    </script> *@
+
+ 
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // تحقق من حالة sessionStorage
+            var dropdowns = document.getElementsByClassName("dropdown-btn");
+
+            for (var i = 0; i < dropdowns.length; i++) {
+                var dropdownContent = dropdowns[i].nextElementSibling;
+
+                // تحقق إذا كانت القائمة محفوظة في sessionStorage وقم بفتحها
+                var isActive = sessionStorage.getItem(dropdowns[i].innerText.trim());
+                if (isActive === "true") {
+                    dropdowns[i].classList.add("active");
+                    dropdownContent.style.display = "block";
+                }
+
+                dropdowns[i].addEventListener("click", function () {
+                    this.classList.toggle("active");
+                    var dropdownContent = this.nextElementSibling;
+
+                    // فتح أو غلق القائمة وتخزين الحالة في sessionStorage
+                    if (dropdownContent.style.display === "block") {
+                        dropdownContent.style.display = "none";
+                        sessionStorage.setItem(this.innerText.trim(), "false");
+                    } else {
+                        dropdownContent.style.display = "block";
+                        sessionStorage.setItem(this.innerText.trim(), "true");
+                    }
+                });
+            }
+        });
     </script>
+
 </body>
 </html>

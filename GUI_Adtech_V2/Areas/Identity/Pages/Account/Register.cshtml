@@ -1,0 +1,167 @@
+﻿@*  @page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+            <h2>Create a new account.</h2>
+            <hr />
+            <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
+            <div class="form-floating mb-3">
+                <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" placeholder="name@example.com" />
+                <label asp-for="Input.Email">Email</label>
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </div>
+            <div class="form-floating mb-3">
+                <input asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" />
+                <label asp-for="Input.Password">Password</label>
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </div>
+            <div class="form-floating mb-3">
+                <input asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" placeholder="password" />
+                <label asp-for="Input.ConfirmPassword">Confirm Password</label>
+                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+            </div>
+            <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
+        </form>
+    </div>
+    <div class="col-md-6 col-md-offset-2">
+        <section>
+            <h3>Use another service to register.</h3>
+            <hr />
+            @{
+                if ((Model.ExternalLogins?.Count ?? 0) == 0)
+                {
+                    <div>
+                        <p>
+                            There are no external authentication services configured. See this <a href="https://go.microsoft.com/fwlink/?LinkID=532715">article
+                            about setting up this ASP.NET application to support logging in via external services</a>.
+                        </p>
+                    </div>
+                }
+                else
+                {
+                    <form id="external-account" asp-page="./ExternalLogin" asp-route-returnUrl="@Model.ReturnUrl" method="post" class="form-horizontal">
+                        <div>
+                            <p>
+                                @foreach (var provider in Model.ExternalLogins!)
+                                {
+                                    <button type="submit" class="btn btn-primary" name="provider" value="@provider.Name" title="Log in using your @provider.DisplayName account">@provider.DisplayName</button>
+                                }
+                            </p>
+                        </div>
+                    </form>
+                }
+            }
+        </section>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+ *@
+
+                                @page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - Adtech</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* إعدادات الخلفية المتحركة */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background: url('/images/background.png') no-repeat center center fixed;
+            background-size: cover;
+            animation: moveBackground 15s infinite alternate;
+        }
+
+        @@keyframes moveBackground {
+            0% {
+                background-position: center center;
+            }
+            100% {
+                background-position: right top;
+            }
+        }
+
+        .bg-navy {
+            background-color: #001f3f; /* لون كحلي */
+        }
+
+        .btn-red {
+            background-color: #FF3B30;
+        }
+
+        .btn-red:hover {
+            background-color: #D32F2F;
+        }
+
+        .custom-shadow {
+            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .input-field {
+            background-color: #f1f1f1;
+            border-color: #dcdcdc;
+        }
+
+        .input-field:focus {
+            border-color: #FF3B30;
+            box-shadow: 0 0 0 2px rgba(255, 59, 48, 0.2);
+        }
+
+        .label-large {
+            font-size: 1.5rem;
+        }
+
+        .label-spacing {
+            margin-bottom: 0.8rem;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center h-screen">
+    <div class="bg-navy rounded-lg shadow-lg p-8 w-full max-w-md custom-shadow">
+        <div class="text-center mb-6">
+            <img src="/images/adtech.png" alt="Adtech Logo" class="mx-auto h-16">
+        </div>
+        <form id="registerForm" method="post" class="space-y-6">
+            <div>
+                <label for="email" class="block text-sm font-medium text-white label-large label-spacing">Email</label>
+                <input asp-for="Input.Email" type="email" id="email" class="input-field w-full px-4 py-3 border rounded-lg" placeholder="Enter your email" required>
+                <span asp-validation-for="Input.Email" class="text-red-500"></span>
+            </div>
+            <div>
+                <label for="password" class="block text-sm font-medium text-white label-large label-spacing">Password</label>
+                <input asp-for="Input.Password" type="password" id="password" class="input-field w-full px-4 py-3 border rounded-lg" placeholder="Enter your password" required>
+                <span asp-validation-for="Input.Password" class="text-red-500"></span>
+            </div>
+            <div>
+                <label for="confirmPassword" class="block text-sm font-medium text-white label-large label-spacing">Confirm Password</label>
+                <input asp-for="Input.ConfirmPassword" type="password" id="confirmPassword" class="input-field w-full px-4 py-3 border rounded-lg" placeholder="Confirm your password" required>
+                <span asp-validation-for="Input.ConfirmPassword" class="text-red-500"></span>
+            </div>
+            <button id="registerSubmit" type="submit" class="w-full btn-red text-white py-3 rounded-lg">Register</button>
+        </form>
+    </div>
+</body>
+</html>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

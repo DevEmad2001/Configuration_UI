@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets\\images\\adtech.png"
     },
     {
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\Configuration_UI\\GUI_Adtech_V2\\wwwroot\\images\\background.png",
+      "PackagePath": "staticwebassets\\images\\background.png"
+    },
+    {
       "Id": "C:\\Users\\Lenovo\\source\\repos\\Configuration_UI\\GUI_Adtech_V2\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
