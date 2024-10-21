@@ -13,6 +13,18 @@ namespace GUI_Adtech_V2.Controllers
         {
             return View();
         }
+        public IActionResult FolderStructure()
+        {
+            return View();
+        }
+        public IActionResult SFTPConnector()
+        {
+            return View();
+        }
+        public IActionResult XMLValidation()
+        {
+            return View();
+        }
 
 
     }

@@ -4,7 +4,23 @@ namespace GUI_Adtech_V2.Controllers
 {
     public class HESController : Controller
     {
-        public IActionResult Index()
+
+        public IActionResult MeterInstallation()
+        {
+            return View();
+        }
+
+        public IActionResult DailyReading()
+        {
+            return View();
+        }
+
+        public IActionResult ControlService()
+        {
+            return View();
+        }
+
+        public IActionResult DataService()
         {
             return View();
         }

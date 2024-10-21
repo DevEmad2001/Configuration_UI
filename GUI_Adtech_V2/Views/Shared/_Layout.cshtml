@@ -1,4 +1,4 @@
-﻿@* <!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -7,214 +7,6 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/GUI_Adtech_V2.styles.css" asp-append-version="true" />
-    <!-- Add FontAwesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
-    <style>
-        body {
-            margin: 0;
-            font-family: "Lato", sans-serif;
-        }
-
-        /* Sidebar styling */
-        .sidebar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 300px;
-            height: 100%;
-            background-color: #263a59;
-            overflow-x: hidden;
-            padding-top: 20px;
-            text-align: center; /* لمركزية الشعار */
-        }
-
-            .sidebar img {
-                width: 180px;
-                height: auto;
-                margin-bottom: 40px; /* إضافة مسافة أسفل الشعار */
-            }
-
-            .sidebar img {
-                margin-right: auto; /* محاذاة إلى اليسار */
-                margin-left: 0;
-                display: block;
-            }
-
-            .sidebar a {
-                display: flex;
-                justify-content: space-between; /* لضمان وضع الأيقونة على الجانب الآخر */
-                align-items: center;
-                padding: 20px;
-                text-decoration: none;
-                color: white;
-                font-size:18px;
-            }
-
-                .sidebar a i {
-                    margin-right: 10px;
-                }
-
-                .sidebar a.active {
-                    background-color: red;
-                }
-
-                .sidebar a:hover:not(.active) {
-                    background-color: royalblue;
-                }
-
-                /* Style for arrow icon */
-                .sidebar a .arrow {
-                    transition: transform 0.3s ease;
-                }
-
-                .sidebar a.active .arrow {
-                    transform: rotate(90deg); /* تدوير السهم عند فتح القائمة */
-                }
-
-        .dropdown-container {
-            display: none;
-            background-color: #36476b;
-            padding-left: 20px;
-        }
-
-            .dropdown-container a {
-                padding: 10px 16px;
-                text-decoration: none;
-                color: white;
-                font-size:18px;
-            }
-
-                .dropdown-container a:hover {
-                    background-color: #495d7f;
-                }
-
-        /* Content styling */
-        .main-content {
-            margin-left: 250px; /* Match the width of the sidebar */
-            padding: 20px;
-            min-height: calc(100vh - 100px); /* حساب ارتفاع المحتوى مع استثناء الـ header و الـ footer */
-        }
-
-        /* Header styling */
-        .header {
-            position: fixed;
-            top: 0;
-            left: 250px;
-            right: 0;
-            height: 56px;
-            background-color: #263a59;
-            color: white;
-            padding: 10px;
-        }
-
-        /* Footer styling */
-        .footer {
-            position: fixed;
-            bottom: 0;
-            left: 250px;
-            right: 0;
-            height: 40px;
-            background-color: #263a59;
-            color: white;
-            text-align: center;
-            padding: 10px;
-        }
-
-        /* For better overflow handling */
-        body, html {
-            height: 100%;
-        }
-
-        /* Ensure content does not overlap with fixed header/footer */
-        main {
-            padding-top: 70px; /* حساب المساحة مع الـ header */
-        }
-
-    </style>
-</head>
-
-<body>
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <img src="~/images/adtech.png" alt="Logo">
-        <a class="dropdown-btn"><i class="fas fa-cogs"></i> Adtech Core Service <i class="fas fa-chevron-right arrow"></i></a>
-        <div class="dropdown-container">
-            <a asp-controller="Core" asp-action="DatabaseConfig">Database Config</a>
-            <a href="#core2">Folder Structure</a>
-            <a href="#core2">SFTP Connector</a>
-            <a href="#core2">XML Validation</a>
-        </div>
-        <a class="dropdown-btn"><i class="fas fa-clipboard-list"></i> Head-End System <i class="fas fa-chevron-right arrow"></i></a>
-        <div class="dropdown-container">
-            <a href="#hes1">Meter Installation</a>
-            <a href="#hes2">Daily Reading</a>
-            <a href="#hes1">Control Service</a>
-            <a href="#hes2">Data Service</a>
-        </div>
-        <a class="dropdown-btn"><i class="fas fa-globe"></i> Goegraphic Information System <i class="fas fa-chevron-right arrow"></i></a>
-        <div class="dropdown-container">
-            <a href="#gis1">User Defined Attribute</a>
-            <a href="#gis2">Network GIS Node</a>
-        </div>
-        <a class="dropdown-btn"><i class="fas fa-server"></i> SCADA <i class="fas fa-chevron-right arrow"></i></a>
-        <div class="dropdown-container">
-            <a href="#scada1">Netwrok Meter</a>
-        </div>
-        <a class="dropdown-btn"><i class="fas fa-network-wired"></i> SINCAL <i class="fas fa-chevron-right arrow"></i></a>
-        <div class="dropdown-container">
-            <a href="#sincal1">Feeders</a>
-            <a href="#sincal2">Transformers</a>
-        </div>
-        <!-- <a class="dropdown-btn"><i class="fas fa-tachometer-alt"></i> Dashboard <i class="fas fa-chevron-right arrow"></i></a>-->
-    </div>
-
-    <!-- Header -->
-    <div class="header">
-        <h2 style="background:#263a59"></h2>
-    </div>
-
-    <!-- Main content -->
-    <div class="main-content">
-        <main role="main">
-            @RenderBody()
-        </main>
-    </div>
-
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
-
-    <script>
-        // Toggle dropdown menus and rotate the arrow
-        var dropdowns = document.getElementsByClassName("dropdown-btn");
-        for (var i = 0; i < dropdowns.length; i++) {
-            dropdowns[i].addEventListener("click", function () {
-                this.classList.toggle("active");
-                var dropdownContent = this.nextElementSibling;
-                if (dropdownContent.style.display === "block") {
-                    dropdownContent.style.display = "none";
-                } else {
-                    dropdownContent.style.display = "block";
-                }
-            });
-        }
-    </script>
-</body>
-</html>
- *@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - GUI_Adtech_V2</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/GUI_Adtech_V2.styles.css" asp-append-version="true" />
-    <!-- Add FontAwesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
     <style>
@@ -228,50 +20,44 @@
             position: fixed;
             top: 0;
             left: 0;
-            width: 330px; /* عرض الشريط الجانبي */
+            width: 330px;
             height: 100%;
             background-color: #263a59;
             overflow-x: hidden;
-            padding-top: 20px; /* يمكنك ضبط المسافة حسب الحاجة */
-            text-align: center; /* يجعل المحتوى في المنتصف */
+            padding-top: 20px;
+            text-align: center;
         }
 
             .sidebar img {
-                padding:10px 0;
-                width: 180px; /* عرض الشعار */
-                height: auto; /* الحفاظ على نسبة العرض إلى الارتفاع */
-                margin: 0 26px 40px; /* جعل الهوامش الأفقية تلقائية لجعل الصورة في المنتصف، مع إضافة 40 بكسل في الأسفل */
-                display: block; /* التأكد من أن الصورة كعنصر كتلي */
+                padding: 10px 0;
+                width: 180px;
+                height: auto;
+                margin: 0 26px 40px;
+                display: block;
             }
-
-
-
-        /* margin-bottom: 50px; */
 
             .sidebar a {
                 display: flex;
-                justify-content: start  ;
+                justify-content: start;
                 align-items: center;
                 padding: 7px 24px;
                 text-decoration: none;
                 color: white;
                 font-size: 16px;
-                white-space: normal; /* للسماح بالتفاف النص الطويل */
-                word-wrap: break-word; /* لفصل الكلمات إذا كانت طويلة جدًا */
+                white-space: normal;
+                word-wrap: break-word;
             }
-            /*justify-content: space-between;*/ 
-            /*padding: 20px;*/
 
                 .sidebar a i {
                     margin-right: 10px;
-                }/* 18px */
+                }
 
                 .sidebar a.active {
                     background-color: orange;
                 }
 
                 .sidebar a:hover:not(.active) {
-                    background-color:grey; /* hover color royalblue #87b4c6 */
+                    background-color: grey;
                 }
 
                 .sidebar a .arrow {
@@ -288,45 +74,27 @@
             padding-left: 20px;
         }
 
-            .dropdown-container a {
-                padding: 10px 16px;
-                text-decoration: none;
-                color: white;
-                font-size: 16px;
+            .dropdown-container a:hover {
+                background-color: #495d7f;
             }
 
-            /*font-size: 18px;*/
-
-                .dropdown-container a:hover {
-                    background-color: #495d7f;
-                }
-
-        /* Content styling */
         .main-content {
-            margin-left: 280px; /* لضبط المسافة بين الشريط الجانبي والمحتوى */
+            margin-left: 280px;
             padding: 20px;
-            min-height: calc(100vh - 100px); /* لحساب ارتفاع المحتوى مع استثناء الـ header و الـ footer */
+            min-height: calc(100vh - 100px);
         }
 
-        /* Header styling */
         .header {
             position: fixed;
             top: 0;
-            left :330px; 
-            height:70px;
-            /* left: 280px;  */            
+            left: 330px;
+            height: 70px;
             right: 0;
-           /*  height: 56px; */   
             background-color: #222b33;
             color: white;
-            padding: 10px; 
-            
+            padding: 10px;
         }
 
-        /* #263a59 */
-
-
-        /* Footer styling */
         .footer {
             position: fixed;
             bottom: 0;
@@ -347,22 +115,15 @@
             padding-top: 48px;
         }
 
-/*         .sidebar a .arrow {
-            margin-left: 10px; 
-            transition: transform 0.3s ease;
-        } */
-
         .sidebar h3 {
-            margin: 0px 0; /* الهوامش حول العنوان */
-            font-size: 20px; /* حجم الخط */
-            text-align: left; /* توسيط العنوان */
-            padding:10px;
-            margin-left:6%;
-            text-transform:uppercase;
-            font-weight : bold;
-            
+            margin: 0px 0;
+            font-size: 20px;
+            text-align: left;
+            padding: 10px;
+            margin-left: 6%;
+            text-transform: uppercase;
+            font-weight: bold;
         }
-
     </style>
 </head>
 
@@ -370,30 +131,39 @@
     <!-- Sidebar -->
     <div class="sidebar">
         <img src="~/images/adtech.png" alt="Logo">
-        <h3 style="color: #48bcbc; margin-right: 18px  ;">SYSTEMS</h3> <!-- العنوان الجديد -->
+        <h3 style="color: #48bcbc; margin-right: 18px;">SYSTEMS</h3>
+        <!-- Adtech Core Service -->
         <a class="dropdown-btn"><i class="fas fa-cogs"></i> Adtech Core Service <i class="fas fa-chevron-right arrow" style="margin:10px"></i></a>
         <div class="dropdown-container">
-            <a asp-controller="Core" asp-action="DatabaseConfig">Database Config</a>
-            <a href="#core2">Folder Structure</a>
-            <a href="#core2">SFTP Connector</a>
-            <a href="#core2">XML Validation</a>
+            <a asp-controller="Core" asp-action="DatabaseConfig" class="@(ViewContext.RouteData.Values["action"].ToString() == "DatabaseConfig" ? "active" : "")">Database Config</a>
+            <a asp-controller="Core" asp-action="FolderStructure" class="@(ViewContext.RouteData.Values["action"].ToString() == "FolderStructure" ? "active" : "")">Folder Structure</a>
+            <a asp-controller="Core" asp-action="SFTPConnector" class="@(ViewContext.RouteData.Values["action"].ToString() == "SFTPConnector" ? "active" : "")">SFTP Connector</a>
+            <a asp-controller="Core" asp-action="XMLValidation" class="@(ViewContext.RouteData.Values["action"].ToString() == "XMLValidation" ? "active" : "")">XML Validation</a>
         </div>
+
+        <!-- Head-End System -->
         <a class="dropdown-btn"><i class="fas fa-clipboard-list"></i> Head-End System <i class="fas fa-chevron-right arrow" style="margin:10px"></i></a>
         <div class="dropdown-container">
-            <a href="#hes1">Meter Installation</a>
-            <a href="#hes2">Daily Reading</a>
-            <a href="#hes1">Control Service</a>
-            <a href="#hes2">Data Service</a>
+            <a asp-controller="HES" asp-action="MeterInstallation" class="@(ViewContext.RouteData.Values["action"].ToString() == "MeterInstallation" ? "active" : "")">Meter Installation</a>
+            <a asp-controller="HES" asp-action="DailyReading" class="@(ViewContext.RouteData.Values["action"].ToString() == "DailyReading" ? "active" : "")">Daily Reading</a>
+            <a asp-controller="HES" asp-action="ControlService" class="@(ViewContext.RouteData.Values["action"].ToString() == "ControlService" ? "active" : "")">Control Service</a>
+            <a asp-controller="HES" asp-action="DataService" class="@(ViewContext.RouteData.Values["action"].ToString() == "DataService" ? "active" : "")">Data Service</a>
         </div>
+
+        <!-- Geographic Information -->
         <a class="dropdown-btn"><i class="fas fa-globe"></i> Geographic Information <i class="fas fa-chevron-right arrow" style="margin:10px"></i></a>
         <div class="dropdown-container">
+            <a asp-controller="GIS" asp-action="GISUDA" class="@(ViewContext.RouteData.Values["action"].ToString() == "GISUDA" ? "active" : "")">Network GIS Node</a>
             <a href="#gis1">User Defined Attribute</a>
-            <a href="#gis2">Network GIS Node</a>
         </div>
+
+        <!-- SCADA -->
         <a class="dropdown-btn"><i class="fas fa-server"></i> SCADA <i class="fas fa-chevron-right arrow" style="margin:10px"></i></a>
         <div class="dropdown-container">
-            <a href="#scada1">Network Meter</a>
+            <a asp-controller="SCADA" asp-action="NetworkMeter" class="@(ViewContext.RouteData.Values["action"].ToString() == "NetworkMeter" ? "active" : "")">Network Meter</a>
         </div>
+
+        <!-- SINCAL -->
         <a class="dropdown-btn"><i class="fas fa-network-wired"></i> SINCAL <i class="fas fa-chevron-right arrow" style="margin:10px"></i></a>
         <div class="dropdown-container">
             <a href="#sincal1">Feeders</a>
@@ -402,21 +172,15 @@
     </div>
 
     <!-- Header -->
-@*     <div class="header">
-        <h2></h2>
-    </div> 
- *@
-    <!-- Header -->
     <div class="header d-flex justify-content-between align-items-center">
         <h2 style="background:#263a59"></h2>
-        <!-- أزرار تسجيل الدخول وإنشاء حساب -->
         <div class="header-buttons" style="margin-right: 20px;">
-            <a asp-area="Identity" asp-page="/Account/Login" class="btn btn-primary" style="margin-right: 10px;">Login</a>
-            <a asp-area="Identity" asp-page="/Account/Register" class="btn btn-secondary">Sign Up</a>
+            <a asp-area="Identity" asp-page="/Account/Login" class="btn btn-primary" style="margin-right: 10px;" title="Login">
+                <i class="fas fa-sign-in-alt"></i>
+            </a>
+
         </div>
-
     </div>
-
 
     <!-- Main content -->
     <div class="main-content">
@@ -430,22 +194,6 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 
-@*     <script>
-        var dropdowns = document.getElementsByClassName("dropdown-btn");
-        for (var i = 0; i < dropdowns.length; i++) {
-            dropdowns[i].addEventListener("click", function () {
-                this.classList.toggle("active");
-                var dropdownContent = this.nextElementSibling;
-                if (dropdownContent.style.display === "block") {
-                    dropdownContent.style.display = "none";
-                } else {
-                    dropdownContent.style.display = "block";
-                }
-            });
-        }
-    </script> *@
-
- 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             // تحقق من حالة sessionStorage
@@ -477,6 +225,5 @@
             }
         });
     </script>
-
 </body>
 </html>

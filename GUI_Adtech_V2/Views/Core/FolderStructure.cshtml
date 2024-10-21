@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Database Configuration</title>
+    <title>Folder Structure Configuration</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <style>
         /* sidebar.css */
-
         .form-group {
             display: flex;
-            align-items: center; /* لمحاذاة الـ label والـ input في نفس المستوى */
+            align-items: center;
             margin-bottom: 15px;
         }
 
@@ -26,23 +25,24 @@
                 border-bottom-right-radius: 0px;
                 background-color: #263a59;
                 color: white;
-                min-width: 180px; /* زيادة عرض الـ label */
-                text-align: center; /* لمحاذاة النص في الوسط */
-                height: 38px; /* تعديل الارتفاع ليتناسب مع input */
+                min-width: 180px; /* تم تعديل عرض الـ label */
+                text-align: center;
+                height: 38px;
                 display: flex;
                 align-items: center;
-                justify-content: center; /* لمحاذاة النص داخل الـ label */
+                justify-content: center;
             }
 
         .form-control {
-            flex-grow: 1; /* للسماح لحقل الإدخال بالتوسع لملء المساحة المتاحة */
+            flex-grow: 1;
             border-top-left-radius: 0px;
             border-bottom-left-radius: 0px;
             border-top-right-radius: 20px;
             border-bottom-right-radius: 20px;
-            height: 38px; /* تعديل ارتفاع الـ input ليتناسب مع الـ label */
+            height: 38px;
         }
 
+        /* Sidebar styling */
         .sidebar {
             position: fixed;
             top: 0;
@@ -130,25 +130,19 @@
             background-color: #263a59;
             color: white;
             border-radius: 5px;
+            height: 225px;
         }
 
             .form-section h4 {
                 margin-bottom: 15px;
             }
 
-        .btn-custom,
-        .btn-cancel {
-            min-width: 120px; /* عرض ثابت */
-            height: 40px; /* ارتفاع ثابت */
-            padding: 10px 20px; /* مسافات داخلية موحدة */
-            font-size: 16px; /* حجم نص موحد */
-            border-radius: 5px; /* زاوية مستديرة للأزرار */
-        }
-
         .btn-custom {
             background-color: #001f3f;
             color: white;
             border-color: #001f3f;
+            min-width: 120px; /* توحيد حجم الأزرار */
+            height: 40px; /* توحيد ارتفاع الأزرار */
         }
 
             .btn-custom:hover {
@@ -159,6 +153,8 @@
             background-color: #d9534f;
             color: white;
             border-color: #d9534f;
+            min-width: 120px; /* توحيد حجم الأزرار */
+            height: 40px; /* توحيد ارتفاع الأزرار */
         }
 
             .btn-cancel:hover {
@@ -181,9 +177,10 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container mt-5" style="margin: 30px 30px 35px 115px;">
-        <h2>Database Configuration</h2>
+        <h2>Folder Structure</h2>
         <form>
             <div class="row">
                 <!-- Server Path Section -->
@@ -195,13 +192,6 @@
                             <input type="text" class="form-control" id="serverPath" placeholder="Enter Server Path" />
                             <!-- Icon for Popover -->
                             <i class="fas fa-info-circle popover-icon" tabindex="0" data-bs-toggle="popover" data-bs-trigger="focus" title="Server Path" data-bs-content="This is the path to the server."></i>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="portNumber" class="form-label">Port Number</label>
-                            <input type="text" class="form-control" id="portNumber" placeholder="Enter Port Number" />
-                            <!-- Icon for Popover -->
-                            <i class="fas fa-info-circle popover-icon" tabindex="0" data-bs-toggle="popover" data-bs-trigger="focus" title="Port Number" data-bs-content="This is the server's port number."></i>
                         </div>
                     </div>
                 </div>
@@ -265,4 +255,5 @@
         })
     </script>
 </body>
+
 </html>

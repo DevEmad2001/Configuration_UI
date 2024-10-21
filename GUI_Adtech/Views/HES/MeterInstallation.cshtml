@@ -1,4 +1,4 @@
-﻿<style>
+﻿@* <style>
     .form-section {
         margin-top: 20px;
         padding: 20px;
@@ -67,5 +67,99 @@
             <button type="submit" class="btn btn-custom">Save</button>
             <button type="button" class="btn btn-cancel">Cancel</button>
         </div>
+    </form>
+</div>
+ *@
+
+<style>
+    .form-section {
+        margin-top: 20px;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+        .form-section h4 {
+            margin-bottom: 15px;
+        }
+
+    .btn-custom {
+        background-color: #001f3f;
+        color: white;
+        border-color: #001f3f;
+    }
+
+        .btn-custom:hover {
+            background-color: #0056b3;
+        }
+
+    .btn-cancel {
+        background-color: #d9534f;
+        color: white;
+        border-color: #d9534f;
+    }
+
+        .btn-cancel:hover {
+            background-color: #c9302c;
+        }
+
+    .button-group {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 30px;
+    }
+
+        .button-group button {
+            margin-left: 10px;
+        }
+</style>
+
+<div class="container mt-5">
+    <h2>Meter Installation Configuration</h2>
+    <form asp-action="SaveMeterInstallationConfig" method="post">
+        <!-- Meter Installation Section -->
+        <div class="form-section">
+            <h4>Meter Installation Configuration</h4>
+
+            <!-- Filewatcher Path -->
+            <div class="mb-3">
+                <label for="filewatcherPath" class="form-label">Filewatcher Path</label>
+                <input type="text" class="form-control" name="filewatcherPath" value="@ViewBag.FilewatcherPath" placeholder="Enter Filewatcher Path" />
+            </div>
+
+            <!-- DB Link -->
+            <div class="mb-3">
+                <label for="dbLink" class="form-label">DB Link</label>
+                <input type="text" class="form-control" name="dbLink" value="@ViewBag.DBLink" placeholder="Enter DB Link" />
+            </div>
+
+            <!-- Log File Path -->
+            <div class="mb-3">
+                <label for="logfilePath" class="form-label">Log File Path</label>
+                <input type="text" class="form-control" name="logfilePath" value="@ViewBag.LogfilePath" placeholder="Enter Log File Path" />
+            </div>
+        </div>
+
+        <!-- Button Section -->
+        <div class="button-group">
+            <button type="submit" class="btn btn-custom">Save</button>
+            <button type="button" class="btn btn-cancel">Cancel</button>
+        </div>
+
+        <!-- Success Message Section -->
+        @if (ViewBag.Message != null)
+        {
+            <div id="successMessage" class="alert alert-success mt-2">@ViewBag.Message</div>
+        }
+
+        <script>
+            // باستخدام JavaScript بسيط
+            setTimeout(function () {
+                var messageElement = document.getElementById("successMessage");
+                if (messageElement) {
+                    messageElement.style.display = "none"; // إخفاء العنصر بعد 10 ثواني
+                }
+            }, 5000); // 5000 ميلي ثانية = 5 ثواني
+        </script>
     </form>
 </div>
