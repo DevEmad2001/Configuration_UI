@@ -2386,6 +2386,88 @@
       ]
     },
     {
+      "Route": "custom.css/core/DatabaseConfig.9l3u412ikw.css",
+      "AssetFile": "custom.css/core/DatabaseConfig.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4151"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"U8pm+o9egxfR9KMoiM0XG8sJzbrkICcDJX9A7/7/01c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 21 Oct 2024 09:13:30 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "9l3u412ikw"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-U8pm+o9egxfR9KMoiM0XG8sJzbrkICcDJX9A7/7/01c="
+        },
+        {
+          "Name": "label",
+          "Value": "custom.css/core/DatabaseConfig.css"
+        }
+      ]
+    },
+    {
+      "Route": "custom.css/core/DatabaseConfig.css",
+      "AssetFile": "custom.css/core/DatabaseConfig.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4151"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"U8pm+o9egxfR9KMoiM0XG8sJzbrkICcDJX9A7/7/01c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 21 Oct 2024 09:13:30 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-U8pm+o9egxfR9KMoiM0XG8sJzbrkICcDJX9A7/7/01c="
+        }
+      ]
+    },
+    {
       "Route": "favicon.61n19gt1b8.ico",
       "AssetFile": "favicon.ico",
       "Selectors": [],

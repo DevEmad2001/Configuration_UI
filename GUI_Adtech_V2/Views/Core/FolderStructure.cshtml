@@ -79,21 +79,28 @@
                     margin-right: 10px;
                 }
 
+                /* اللون البرتقالي للعناصر الرئيسية */
                 .sidebar a.active {
                     background-color: orange;
                 }
 
-                .sidebar a:hover:not(.active) {
-                    background-color: grey;
-                }
+        /* اللون الأزرق للعناصر الفرعية */
+        .dropdown-container a.active {
+            background-color: #48bcbc;
+            color: white;
+        }
 
-                .sidebar a .arrow {
-                    transition: transform 0.3s ease;
-                }
+        .sidebar a:hover:not(.active) {
+            background-color: grey;
+        }
 
-                .sidebar a.active .arrow {
-                    transform: rotate(90deg);
-                }
+        .sidebar a .arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .sidebar a.active .arrow {
+            transform: rotate(90deg);
+        }
 
         .dropdown-container {
             display: none;

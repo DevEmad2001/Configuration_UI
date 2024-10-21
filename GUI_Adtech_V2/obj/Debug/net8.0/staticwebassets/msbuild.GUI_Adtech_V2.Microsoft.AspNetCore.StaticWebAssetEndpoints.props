@@ -12,6 +12,18 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-tZOdMxEkZcqCgoZtNWwwFk5ci5AXAIxpaqQ33wTTLZo="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"473"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022tZOdMxEkZcqCgoZtNWwwFk5ci5AXAIxpaqQ33wTTLZo=\u0022"},{"Name":"Last-Modified","Value":"Sun, 06 Oct 2024 11:08:09 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/GUI_Adtech_V2/custom.css/core/DatabaseConfig.9l3u412ikw.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\custom.css\core\DatabaseConfig.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"9l3u412ikw"},{"Name":"integrity","Value":"sha256-U8pm\u002Bo9egxfR9KMoiM0XG8sJzbrkICcDJX9A7/7/01c="},{"Name":"label","Value":"_content/GUI_Adtech_V2/custom.css/core/DatabaseConfig.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"4151"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022U8pm\u002Bo9egxfR9KMoiM0XG8sJzbrkICcDJX9A7/7/01c=\u0022"},{"Name":"Last-Modified","Value":"Mon, 21 Oct 2024 09:13:30 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/GUI_Adtech_V2/custom.css/core/DatabaseConfig.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\custom.css\core\DatabaseConfig.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-U8pm\u002Bo9egxfR9KMoiM0XG8sJzbrkICcDJX9A7/7/01c="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"4151"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022U8pm\u002Bo9egxfR9KMoiM0XG8sJzbrkICcDJX9A7/7/01c=\u0022"},{"Name":"Last-Modified","Value":"Mon, 21 Oct 2024 09:13:30 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/GUI_Adtech_V2/favicon.61n19gt1b8.ico">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\favicon.ico'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>

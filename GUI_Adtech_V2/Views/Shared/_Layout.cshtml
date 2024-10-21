@@ -46,27 +46,26 @@
                 font-size: 16px;
                 white-space: normal;
                 word-wrap: break-word;
+                transition: background-color 0.3s ease;
             }
 
                 .sidebar a i {
                     margin-right: 10px;
                 }
 
+                /* اللون البرتقالي عند اختيار النظام */
                 .sidebar a.active {
                     background-color: orange;
                 }
 
-                .sidebar a:hover:not(.active) {
-                    background-color: grey;
-                }
+        /* اللون الأزرق عند اختيار أحد المكونات الفرعية */
+        .dropdown-container a.active {
+            background-color: #0056b3; /* لون أزرق */
+        }
 
-                .sidebar a .arrow {
-                    transition: transform 0.3s ease;
-                }
-
-                .sidebar a.active .arrow {
-                    transform: rotate(90deg);
-                }
+        .sidebar a:hover:not(.active) {
+            background-color: grey;
+        }
 
         .dropdown-container {
             display: none;
@@ -132,6 +131,7 @@
     <div class="sidebar">
         <img src="~/images/adtech.png" alt="Logo">
         <h3 style="color: #48bcbc; margin-right: 18px;">SYSTEMS</h3>
+
         <!-- Adtech Core Service -->
         <a class="dropdown-btn"><i class="fas fa-cogs"></i> Adtech Core Service <i class="fas fa-chevron-right arrow" style="margin:10px"></i></a>
         <div class="dropdown-container">
@@ -178,7 +178,6 @@
             <a asp-area="Identity" asp-page="/Account/Login" class="btn btn-primary" style="margin-right: 10px;" title="Login">
                 <i class="fas fa-sign-in-alt"></i>
             </a>
-
         </div>
     </div>
 

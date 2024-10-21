@@ -1,0 +1,182 @@
+﻿<style >
+/* sidebar.css */
+.form-group {
+    display: flex;
+    align-items: center; /* لمحاذاة الـ label والـ input في نفس المستوى */
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    margin-right: 10px;
+    margin-top: 7px;
+    width: auto;
+    padding: 5px;
+    border: 2px solid white;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    background-color: #263a59;
+    color: white;
+    min-width: 180px; /* زيادة عرض الـ label */
+    text-align: center; /* لمحاذاة النص في الوسط */
+    height: 38px; /* تعديل الارتفاع ليتناسب مع input */
+    display: flex;
+    align-items: center;
+    justify-content: center; /* لمحاذاة النص داخل الـ label */
+}
+
+.form-control {
+    flex-grow: 1; /* للسماح لحقل الإدخال بالتوسع لملء المساحة المتاحة */
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    height: 38px; /* تعديل ارتفاع الـ input ليتناسب مع الـ label */
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 330px;
+    height: 100%;
+    background-color: #263a59;
+    overflow-x: hidden;
+    padding-top: 20px;
+    text-align: center;
+}
+
+    .sidebar img {
+        padding: 10px 0;
+        width: 180px;
+        height: auto;
+        margin: 0 26px 40px;
+        display: block;
+    }
+
+    .sidebar a {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        padding: 7px 24px;
+        text-decoration: none;
+        color: white;
+        font-size: 16px;
+        white-space: normal;
+        word-wrap: break-word;
+    }
+
+        .sidebar a i {
+            margin-right: 10px;
+        }
+
+        /* اللون البرتقالي للعناصر الرئيسية */
+        .sidebar a.active {
+            background-color: orange;
+        }
+
+/* اللون الأزرق للعناصر الفرعية */
+.dropdown-container a.active {
+    background-color: #48bcbc;
+    color: white;
+}
+
+.sidebar a:hover:not(.active) {
+    background-color: grey;
+}
+
+.sidebar a .arrow {
+    transition: transform 0.3s ease;
+}
+
+.sidebar a.active .arrow {
+    transform: rotate(90deg);
+}
+
+.dropdown-container {
+    display: none;
+    background-color: #36476b;
+    padding-left: 20px;
+}
+
+    .dropdown-container a {
+        padding: 10px 16px;
+        text-decoration: none;
+        color: white;
+        font-size: 16px;
+    }
+
+        .dropdown-container a:hover {
+            background-color: #495d7f;
+        }
+
+.sidebar h3 {
+    margin: 0px;
+    font-size: 20px;
+    text-align: left;
+    padding: 10px;
+    margin-left: 6%;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #48bcbc;
+}
+
+.form-section {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #263a59;
+    color: white;
+    border-radius: 5px;
+}
+
+    .form-section h4 {
+        margin-bottom: 15px;
+    }
+
+.btn-custom,
+.btn-cancel {
+    min-width: 120px; /* عرض ثابت */
+    height: 40px; /* ارتفاع ثابت */
+    padding: 10px 20px; /* مسافات داخلية موحدة */
+    font-size: 16px; /* حجم نص موحد */
+    border-radius: 5px; /* زاوية مستديرة للأزرار */
+}
+
+.btn-custom {
+    background-color: #001f3f;
+    color: white;
+    border-color: #001f3f;
+}
+
+    .btn-custom:hover {
+        background-color: #0056b3;
+    }
+
+.btn-cancel {
+    background-color: #d9534f;
+    color: white;
+    border-color: #d9534f;
+}
+
+    .btn-cancel:hover {
+        background-color: #c9302c;
+    }
+
+.button-group {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+}
+
+    .button-group button {
+        margin-left: 10px;
+    }
+
+.popover-icon {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+</style >

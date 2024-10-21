@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "FbU6e5yoMyQ9kZPmqS4Y8A2aSw5ICzORf+tY4bK2CVg=",
+  "Hash": "IKAE6UiVEgmMAbWx8F5tTbvsT19xc0DeBJr2jelkSuY=",
   "Source": "GUI_Adtech_V2",
   "BasePath": "_content/GUI_Adtech_V2",
   "Mode": "Default",
@@ -1338,6 +1338,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "C:\\Users\\Lenovo\\source\\repos\\Configuration_UI\\GUI_Adtech_V2\\wwwroot\\custom.css\\core\\DatabaseConfig.css",
+      "SourceId": "GUI_Adtech_V2",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Lenovo\\source\\repos\\Configuration_UI\\GUI_Adtech_V2\\wwwroot\\",
+      "BasePath": "_content/GUI_Adtech_V2",
+      "RelativePath": "custom.css/core/DatabaseConfig#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "9l3u412ikw",
+      "Integrity": "U8pm+o9egxfR9KMoiM0XG8sJzbrkICcDJX9A7/7/01c=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\custom.css\\core\\DatabaseConfig.css"
     },
     {
       "Identity": "C:\\Users\\Lenovo\\source\\repos\\Configuration_UI\\GUI_Adtech_V2\\wwwroot\\favicon.ico",
@@ -2701,6 +2722,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-tZOdMxEkZcqCgoZtNWwwFk5ci5AXAIxpaqQ33wTTLZo="
+        }
+      ]
+    },
+    {
+      "Route": "custom.css/core/DatabaseConfig.9l3u412ikw.css",
+      "AssetFile": "C:\\Users\\Lenovo\\source\\repos\\Configuration_UI\\GUI_Adtech_V2\\wwwroot\\custom.css\\core\\DatabaseConfig.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4151"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"U8pm+o9egxfR9KMoiM0XG8sJzbrkICcDJX9A7/7/01c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 21 Oct 2024 09:13:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "9l3u412ikw"
+        },
+        {
+          "Name": "label",
+          "Value": "custom.css/core/DatabaseConfig.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-U8pm+o9egxfR9KMoiM0XG8sJzbrkICcDJX9A7/7/01c="
+        }
+      ]
+    },
+    {
+      "Route": "custom.css/core/DatabaseConfig.css",
+      "AssetFile": "C:\\Users\\Lenovo\\source\\repos\\Configuration_UI\\GUI_Adtech_V2\\wwwroot\\custom.css\\core\\DatabaseConfig.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4151"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"U8pm+o9egxfR9KMoiM0XG8sJzbrkICcDJX9A7/7/01c=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 21 Oct 2024 09:13:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-U8pm+o9egxfR9KMoiM0XG8sJzbrkICcDJX9A7/7/01c="
         }
       ]
     },
