@@ -27,6 +27,14 @@ build_property.MSBuildProjectDirectory = C:\Users\Lenovo\source\repos\Configurat
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 8.0
 
+[C:/Users/Lenovo/source/repos/Configuration_UI/GUI_Adtech_V2/Views/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Lenovo/source/repos/Configuration_UI/GUI_Adtech_V2/Views/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Lenovo/source/repos/Configuration_UI/GUI_Adtech_V2/Views/Core/DatabaseConfig.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29yZVxEYXRhYmFzZUNvbmZpZy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

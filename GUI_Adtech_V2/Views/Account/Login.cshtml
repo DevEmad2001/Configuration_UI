@@ -1,0 +1,102 @@
+﻿@model GUI_Adtech_V2.Models.LoginViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول - Adtech</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* إعدادات الخلفية المتحركة */
+        body {
+            background-image: url('/images/background.png'); /* المسار الصحيح للصورة */
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-size: cover;
+            animation: moveBackground 15s infinite alternate;
+        }
+
+        @@keyframes moveBackground {
+            0% {
+                background-position: center center;
+            }
+            100% {
+                background-position: right top;
+            }
+        }
+
+        /* لون الخلفية للكارد (النموذج) */
+        .bg-navy {
+            background-color: #001f3f; /* لون كحلي */
+        }
+
+        .btn-red {
+            background-color: #FF3B30;
+        }
+
+        .btn-red:hover {
+            background-color: #D32F2F;
+        }
+
+        .custom-shadow {
+            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .input-field {
+            background-color: #f1f1f1;
+            border-color: #dcdcdc;
+        }
+
+        .input-field:focus {
+            border-color: #FF3B30;
+            box-shadow: 0 0 0 2px rgba(255, 59, 48, 0.2);
+        }
+
+        /* تكبير حجم الخط للـ Label */
+        .label-large {
+            font-size: 1.5rem; /* زيادة حجم الخط */
+        }
+
+        /* إضافة مساحة بين الـ Label وحقول الإدخال */
+        .label-spacing {
+            margin-bottom: 0.8rem; /* مسافة بين الـ Label و TextBox */
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center h-screen">
+    <div class="bg-navy rounded-lg shadow-lg p-8 w-full max-w-md custom-shadow">
+        <div class="text-center mb-6">
+            <img src="~/images/adtech.png" alt="Adtech Logo" class="mx-auto h-16">
+        </div>
+
+        <!-- form الخاص بتسجيل الدخول -->
+        <form asp-action="Login" method="post" class="space-y-6">
+            <div>
+                <label asp-for="Email" class="block text-sm font-medium text-white label-large label-spacing"></label>
+                <input asp-for="Email" class="input-field w-full px-4 py-3 border rounded-lg" placeholder="Enter your email" />
+                <span asp-validation-for="Email" class="text-red-500"></span>
+            </div>
+
+            <div>
+                <label asp-for="Password" class="block text-sm font-medium text-white label-large label-spacing"></label>
+                <input asp-for="Password" type="password" class="input-field w-full px-4 py-3 border rounded-lg" placeholder="Enter your password" />
+                <span asp-validation-for="Password" class="text-red-500"></span>
+            </div>
+
+            <div class="text-right">
+                <a href="#" class="text-sm text-gray-400 hover:text-red-500">Forget Password?</a>
+            </div>
+
+            <button type="submit" class="w-full btn-red text-white py-3 rounded-lg">Login</button>
+        </form>
+    </div>
+
+    <!-- تحذيرات التحقق من النموذج -->
+    <div asp-validation-summary="ModelOnly" class="text-red-500"></div>
+</body>
+</html>

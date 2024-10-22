@@ -292,3 +292,6 @@ C:\Users\Lenovo\source\repos\Configuration_UI\GUI_Adtech_V2\bin\Debug\net8.0\run
 C:\Users\Lenovo\source\repos\Configuration_UI\GUI_Adtech_V2\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\Lenovo\source\repos\Configuration_UI\GUI_Adtech_V2\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 C:\Users\Lenovo\source\repos\Configuration_UI\GUI_Adtech_V2\bin\Debug\net8.0\System.Formats.Asn1.dll
+C:\Users\Lenovo\source\repos\Configuration_UI\GUI_Adtech_V2\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Lenovo\source\repos\Configuration_UI\GUI_Adtech_V2\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+C:\Users\Lenovo\source\repos\Configuration_UI\GUI_Adtech_V2\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll

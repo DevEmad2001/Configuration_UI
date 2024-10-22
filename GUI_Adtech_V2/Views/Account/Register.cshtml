@@ -1,0 +1,106 @@
+﻿@model GUI_Adtech_V2.Models.RegisterViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>التسجيل - Adtech</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        /* إعدادات الخلفية المتحركة */
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background-image: url('/images/background.png');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            animation: moveBackground 15s infinite alternate;
+        }
+
+        @@keyframes moveBackground {
+            0% {
+                background-position: center center;
+            }
+            100% {
+                background-position: right top;
+            }
+        }
+
+        /* لون الخلفية للكارد (النموذج) */
+        .bg-navy {
+            background-color: #001f3f; /* لون كحلي */
+        }
+
+        .btn-red {
+            background-color: #FF3B30;
+        }
+
+        .btn-red:hover {
+            background-color: #D32F2F;
+        }
+
+        .custom-shadow {
+            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .input-field {
+            background-color: #f1f1f1;
+            border-color: #dcdcdc;
+        }
+
+        .input-field:focus {
+            border-color: #FF3B30;
+            box-shadow: 0 0 0 2px rgba(255, 59, 48, 0.2);
+        }
+
+        /* تكبير حجم الخط للـ Label */
+        .label-large {
+            font-size: 1.5rem; /* زيادة حجم الخط */
+        }
+
+        /* إضافة مساحة بين الـ Label وحقول الإدخال */
+        .label-spacing {
+            margin-bottom: 0.8rem; /* مسافة بين الـ Label و TextBox */
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center h-screen">
+    <div class="bg-navy rounded-lg shadow-lg p-8 w-full max-w-md custom-shadow">
+        <div class="text-center mb-6">
+            <img src="~/images/adtech.png" alt="Adtech Logo" class="mx-auto h-16">
+        </div>
+
+        <!-- form الخاص بالتسجيل -->
+        <form asp-action="Register" method="post" class="space-y-6">
+            <div>
+                <label asp-for="Email" class="block text-sm font-medium text-white label-large label-spacing">Email</label>
+                <input asp-for="Email" class="input-field w-full px-4 py-3 border rounded-lg" placeholder="Enter your email" />
+                <span asp-validation-for="Email" class="text-red-500"></span>
+            </div>
+
+            <div>
+                <label asp-for="Password" class="block text-sm font-medium text-white label-large label-spacing">Password</label>
+                <input asp-for="Password" type="password" class="input-field w-full px-4 py-3 border rounded-lg" placeholder="Enter your password" />
+                <span asp-validation-for="Password" class="text-red-500"></span>
+            </div>
+
+            <div>
+                <label asp-for="ConfirmPassword" class="block text-sm font-medium text-white label-large label-spacing">Confirm Password</label>
+                <input asp-for="ConfirmPassword" type="password" class="input-field w-full px-4 py-3 border rounded-lg" placeholder="Confirm your password" />
+                <span asp-validation-for="ConfirmPassword" class="text-red-500"></span>
+            </div>
+
+            <button type="submit" class="w-full btn-red text-white py-3 rounded-lg">Register</button>
+        </form>
+    </div>
+
+    <!-- تحذيرات التحقق من النموذج -->
+    <div asp-validation-summary="ModelOnly" class="text-red-500"></div>
+</body>
+</html>
