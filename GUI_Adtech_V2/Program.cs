@@ -49,6 +49,9 @@
 using GUI_Adtech_V2.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using GUI_Adtech_V2.Repos.IRepository;
+using GUI_Adtech_V2.Repositories;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -58,6 +61,10 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+
+// ?? Program.cs
+builder.Services.AddScoped<IConfigRepository, ConfigRepository>();
+
 
 // Add Identity services with more detailed password requirements and settings
 builder.Services.AddDefaultIdentity<IdentityUser>(options =>

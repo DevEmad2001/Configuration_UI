@@ -1,0 +1,109 @@
+﻿
+<style>
+    .form-section {
+        margin-top: 20px;
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+        .form-section h4 {
+            margin-bottom: 15px;
+        }
+
+    .form-control {
+        font-weight: bold;
+    }
+
+    .btn-custom {
+        background-color: #001f3f;
+        color: white;
+        border-color: #001f3f;
+    }
+
+        .btn-custom:hover {
+            background-color: #0056b3;
+        }
+
+    .btn-cancel {
+        background-color: #d9534f;
+        color: white;
+        border-color: #d9534f;
+    }
+
+        .btn-cancel:hover {
+            background-color: #c9302c;
+        }
+
+    .button-group {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 30px;
+    }
+
+        .button-group button {
+            margin-left: 10px;
+        }
+
+    .alert-success {
+        font-weight: bold;
+        color: #155724;
+        background-color: #d4edda;
+        border-color: #c3e6cb;
+        padding: 10px;
+        margin-top: 20px;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    .hidden {
+        display: none;
+    }
+</style>
+
+<div class="container mt-5">
+    <!-- إشعار النجاح -->
+    @if (ViewBag.Message != null)
+    {
+        <div id="successMessage" class="alert alert-success">
+            @ViewBag.Message
+        </div>
+    }
+
+    <h2>XML Validation Configuration</h2>
+    <form asp-action="XMLValidation" method="post">
+        <!-- Schema Section -->
+        <div class="form-section">
+            <h4>Schema Validation</h4>
+            <div class="mb-3">
+                <label for="readingSchema" class="form-label">Reading Schema</label>
+                <input type="text" class="form-control" name="readingSchema" value="@ViewBag.ReadingSchema" placeholder="Enter Reading Schema Path" />
+            </div>
+            <div class="mb-3">
+                <label for="eventSchema" class="form-label">Event Schema</label>
+                <input type="text" class="form-control" name="eventSchema" value="@ViewBag.EventSchema" placeholder="Enter Event Schema Path" />
+            </div>
+            <div class="mb-3">
+                <label for="configSchema" class="form-label">Config Schema</label>
+                <input type="text" class="form-control" name="configSchema" value="@ViewBag.ConfigSchema" placeholder="Enter Config Schema Path" />
+            </div>
+        </div>
+
+        <!-- Button Section -->
+        <div class="button-group">
+            <button type="submit" class="btn btn-custom">Save</button>
+            <button type="button" class="btn btn-cancel">Cancel</button>
+        </div>
+        <script>
+            // إخفاء إشعار النجاح بعد 5 ثواني
+            setTimeout(function () {
+                var messageElement = document.getElementById("successMessage");
+                if (messageElement) {
+                    messageElement.style.display = "none"; // إخفاء الإشعار بعد 5 ثوانٍ
+                }
+            }, 5000); // 5000 ميلي ثانية = 5 ثواني
+        </script>
+
+    </form>
+</div>
+
