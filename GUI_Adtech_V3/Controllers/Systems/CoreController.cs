@@ -42,10 +42,10 @@ namespace GUI_Adtech.Controllers.Systems
         public async Task<IActionResult> DatabaseConfig()
         {
             // الحصول على القيم من قاعدة البيانات بناءً على ComponentName "MeterInstallation"
-            var serverPathConfig = await _configRepository.GetConfigByParameterAndComponentAsync("ServerPath", "MeterInstallation");
-            var portNumberConfig = await _configRepository.GetConfigByParameterAndComponentAsync("PortNumber", "MeterInstallation");
-            var usernameConfig = await _configRepository.GetConfigByParameterAndComponentAsync("Username", "MeterInstallation");
-            var passwordConfig = await _configRepository.GetConfigByParameterAndComponentAsync("Password", "MeterInstallation");
+            var serverPathConfig = await _configRepository.GetConfigByParameterAndComponentAsync("ServerPath", "DatabaseConfig"); /*MeterInstallation*/
+            var portNumberConfig = await _configRepository.GetConfigByParameterAndComponentAsync("PortNumber", "DatabaseConfig");
+            var usernameConfig = await _configRepository.GetConfigByParameterAndComponentAsync("Username", "DatabaseConfig");
+            var passwordConfig = await _configRepository.GetConfigByParameterAndComponentAsync("Password", "DatabaseConfig");
 
             // تمرير القيم إلى ViewBag لعرضها في الـ View
             ViewBag.ServerPath = serverPathConfig?.ParameterValue;
@@ -93,12 +93,14 @@ namespace GUI_Adtech.Controllers.Systems
         }
 
 
+
+
         [HttpPost]
         public async Task<IActionResult> DatabaseConfig(string serverPath, string portNumber, string username, string password)
         {
             if (ModelState.IsValid)
             {
-                //تحديث أو إضافة ServerPath
+                // تحديث أو إضافة ServerPath
                 var configServerPath = await _configRepository.GetConfigByParameterNameAsync("ServerPath");
                 if (configServerPath != null)
                 {
@@ -106,8 +108,18 @@ namespace GUI_Adtech.Controllers.Systems
                     configServerPath.ModifiesDate = DateTime.Now;
                     await _configRepository.UpdateConfigAsync(configServerPath);
                 }
+                else
+                {
+                    await _configRepository.AddConfigAsync(new AdtechConfig
+                    {
+                        ParameterName = "ServerPath",
+                        ParameterValue = serverPath,
+                        ModifiesDate = DateTime.Now,
+                        ComponentName = "DatabaseConfig"
+                    });
+                }
 
-                //تحديث أو إضافة PortNumber
+                // تحديث أو إضافة PortNumber
                 var configPortNumber = await _configRepository.GetConfigByParameterNameAsync("PortNumber");
                 if (configPortNumber != null)
                 {
@@ -115,8 +127,18 @@ namespace GUI_Adtech.Controllers.Systems
                     configPortNumber.ModifiesDate = DateTime.Now;
                     await _configRepository.UpdateConfigAsync(configPortNumber);
                 }
+                else
+                {
+                    await _configRepository.AddConfigAsync(new AdtechConfig
+                    {
+                        ParameterName = "PortNumber",
+                        ParameterValue = portNumber,
+                        ModifiesDate = DateTime.Now,
+                        ComponentName = "DatabaseConfig"
+                    });
+                }
 
-                //تحديث أو إضافة Username
+                // تحديث أو إضافة Username
                 var configUsername = await _configRepository.GetConfigByParameterNameAsync("Username");
                 if (configUsername != null)
                 {
@@ -124,8 +146,18 @@ namespace GUI_Adtech.Controllers.Systems
                     configUsername.ModifiesDate = DateTime.Now;
                     await _configRepository.UpdateConfigAsync(configUsername);
                 }
+                else
+                {
+                    await _configRepository.AddConfigAsync(new AdtechConfig
+                    {
+                        ParameterName = "Username",
+                        ParameterValue = username,
+                        ModifiesDate = DateTime.Now,
+                        ComponentName = "DatabaseConfig"
+                    });
+                }
 
-                //تحديث أو إضافة Password
+                // تحديث أو إضافة Password
                 var configPassword = await _configRepository.GetConfigByParameterNameAsync("Password");
                 if (configPassword != null)
                 {
@@ -133,18 +165,27 @@ namespace GUI_Adtech.Controllers.Systems
                     configPassword.ModifiesDate = DateTime.Now;
                     await _configRepository.UpdateConfigAsync(configPassword);
                 }
+                else
+                {
+                    await _configRepository.AddConfigAsync(new AdtechConfig
+                    {
+                        ParameterName = "Password",
+                        ParameterValue = password,
+                        ModifiesDate = DateTime.Now,
+                        ComponentName = "DatabaseConfig"
+                    });
+                }
 
-                //عرض رسالة نجاح
-                ViewBag.Message = "Configuration updated successfully!";
-                return View("DatabaseConfig");
+                // عرض رسالة نجاح
+                TempData["Message"] = "تم تحديث التهيئة بنجاح!";
+                return RedirectToAction("DatabaseConfig");
             }
 
             return View("DatabaseConfig");
         }
 
-
         [HttpPost]
-        public async Task<IActionResult> SaveFolderStructure(string componentName, string serverPath, string username, string password)
+        public async Task<IActionResult> FolderStructure(string componentName, string serverPath, string username, string password)
         {
             if (ModelState.IsValid)
             {
@@ -331,7 +372,8 @@ namespace GUI_Adtech.Controllers.Systems
 
             return View();
         }
-
+     
+        
         [HttpPost]
         public async Task<IActionResult> XMLValidation(string readingSchema, string eventSchema, string configSchema)
         {
@@ -409,9 +451,7 @@ namespace GUI_Adtech.Controllers.Systems
 
 
 
-        //public IActionResult XMLValidation()
-        //{
-        //    return View();
-        //}
+
+
     }
 }

@@ -13,6 +13,14 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\Configuration_UI\\GUI_Adtech_V3\\wwwroot\\images\\adtech.png",
+      "PackagePath": "staticwebassets\\images\\adtech.png"
+    },
+    {
+      "Id": "C:\\Users\\Lenovo\\source\\repos\\Configuration_UI\\GUI_Adtech_V3\\wwwroot\\images\\background.png",
+      "PackagePath": "staticwebassets\\images\\background.png"
+    },
+    {
       "Id": "C:\\Users\\Lenovo\\source\\repos\\Configuration_UI\\GUI_Adtech_V3\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

@@ -248,6 +248,170 @@
       ]
     },
     {
+      "Route": "images/adtech.mxgj2jtzpc.png",
+      "AssetFile": "images/adtech.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2820"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"etorIGAUzrQF3ttfkjFiZ5dJq8vyqCCM2YVcwapZAkk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 16 Sep 2024 12:06:41 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "mxgj2jtzpc"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-etorIGAUzrQF3ttfkjFiZ5dJq8vyqCCM2YVcwapZAkk="
+        },
+        {
+          "Name": "label",
+          "Value": "images/adtech.png"
+        }
+      ]
+    },
+    {
+      "Route": "images/adtech.png",
+      "AssetFile": "images/adtech.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2820"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"etorIGAUzrQF3ttfkjFiZ5dJq8vyqCCM2YVcwapZAkk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 16 Sep 2024 12:06:41 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-etorIGAUzrQF3ttfkjFiZ5dJq8vyqCCM2YVcwapZAkk="
+        }
+      ]
+    },
+    {
+      "Route": "images/background.oe490i0au7.png",
+      "AssetFile": "images/background.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "144132"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"cHkxHMl+oR+0efezAoz1IJeI6HGz4iqN0UUmQi1dYfU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 16 Sep 2024 12:18:36 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "oe490i0au7"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-cHkxHMl+oR+0efezAoz1IJeI6HGz4iqN0UUmQi1dYfU="
+        },
+        {
+          "Name": "label",
+          "Value": "images/background.png"
+        }
+      ]
+    },
+    {
+      "Route": "images/background.png",
+      "AssetFile": "images/background.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "144132"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"cHkxHMl+oR+0efezAoz1IJeI6HGz4iqN0UUmQi1dYfU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 16 Sep 2024 12:18:36 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-cHkxHMl+oR+0efezAoz1IJeI6HGz4iqN0UUmQi1dYfU="
+        }
+      ]
+    },
+    {
       "Route": "js/site.js",
       "AssetFile": "js/site.js",
       "Selectors": [],

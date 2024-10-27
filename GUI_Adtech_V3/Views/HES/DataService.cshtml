@@ -55,29 +55,28 @@
 <body>
     <div class="container mt-5">
         <h2>Data Service Configuration</h2>
-        <form id="configForm">
+        <form asp-action="SaveDataServiceConfig" method="post" enctype="multipart/form-data">
             <!-- First Section -->
             <div class="form-section">
                 <div class="mb-3">
                     <label for="serviceURL" class="form-label">Service URL</label>
-                    <input type="text" class="form-control" id="serviceURL" placeholder="Enter Service URL">
+                    <input type="text" class="form-control" id="serviceURL" name="serviceURL" placeholder="Enter Service URL">
                 </div>
                 <div class="mb-3">
                     <label for="binding" class="form-label">Binding</label>
-                    <input type="text" class="form-control" id="binding" placeholder="Enter Binding">
+                    <input type="text" class="form-control" id="binding" name="binding" placeholder="Enter Binding">
                 </div>
-
                 <div class="mb-3">
                     <label for="protocol" class="form-label">Protocol</label>
-                    <input type="text" class="form-control" id="protocol" placeholder="Enter Protocol">
+                    <input type="text" class="form-control" id="protocol" name="protocol" placeholder="Enter Protocol">
                 </div>
             </div>
 
-            <!-- Authentication Form Section (Last Section) -->
+            <!-- Authentication Form Section -->
             <div class="form-section">
                 <div class="mb-3">
                     <label for="authentication" class="form-label">Authentication</label>
-                    <select class="form-select" id="authentication">
+                    <select class="form-select" id="authentication" name="authentication">
                         <option value="" selected disabled>Choose Authentication</option>
                         <option value="basic">Basic</option>
                         <option value="certificate">Certificate</option>
@@ -91,11 +90,11 @@
                 <h4>Basic Authentication</h4>
                 <div class="mb-3">
                     <label for="username" class="form-label">Username</label>
-                    <input type="text" class="form-control" id="username" placeholder="Enter Username">
+                    <input type="text" class="form-control" id="username" name="username" placeholder="Enter Username">
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="password" placeholder="Enter Password">
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password">
                 </div>
             </div>
 
@@ -104,7 +103,7 @@
                 <h4>Certificate Authentication</h4>
                 <div class="mb-3">
                     <label for="certificate" class="form-label">Upload Certificate</label>
-                    <input type="file" class="form-control" id="certificate">
+                    <input type="file" class="form-control" id="certificate" name="certificate">
                 </div>
             </div>
 
@@ -113,7 +112,7 @@
                 <h4>Token Authentication</h4>
                 <div class="mb-3">
                     <label for="token" class="form-label">Enter Token</label>
-                    <input type="text" class="form-control" id="token" placeholder="Enter Token">
+                    <input type="text" class="form-control" id="token" name="token" placeholder="Enter Token">
                 </div>
             </div>
 
@@ -125,7 +124,6 @@
         </form>
     </div>
 
-    <!-- JavaScript to handle form display -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             var authSelect = document.getElementById('authentication');
@@ -151,5 +149,6 @@
             });
         });
     </script>
+
 </body>
 </html>

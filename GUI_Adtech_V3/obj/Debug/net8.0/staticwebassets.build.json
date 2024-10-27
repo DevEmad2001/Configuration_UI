@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "zr3H1l4Se50I23kfko73UtIMGEdnSE9GUULwP61I7Bo=",
+  "Hash": "WE5rj2CrWvGWYlhmtdEbqDxNy/6Lv/vWee5oQ7CNezM=",
   "Source": "GUI_Adtech_V3",
   "BasePath": "_content/GUI_Adtech_V3",
   "Mode": "Default",
@@ -99,6 +99,48 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\Lenovo\\source\\repos\\Configuration_UI\\GUI_Adtech_V3\\wwwroot\\images\\adtech.png",
+      "SourceId": "GUI_Adtech_V3",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Lenovo\\source\\repos\\Configuration_UI\\GUI_Adtech_V3\\wwwroot\\",
+      "BasePath": "_content/GUI_Adtech_V3",
+      "RelativePath": "images/adtech#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "mxgj2jtzpc",
+      "Integrity": "etorIGAUzrQF3ttfkjFiZ5dJq8vyqCCM2YVcwapZAkk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\adtech.png"
+    },
+    {
+      "Identity": "C:\\Users\\Lenovo\\source\\repos\\Configuration_UI\\GUI_Adtech_V3\\wwwroot\\images\\background.png",
+      "SourceId": "GUI_Adtech_V3",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Lenovo\\source\\repos\\Configuration_UI\\GUI_Adtech_V3\\wwwroot\\",
+      "BasePath": "_content/GUI_Adtech_V3",
+      "RelativePath": "images/background#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "oe490i0au7",
+      "Integrity": "cHkxHMl+oR+0efezAoz1IJeI6HGz4iqN0UUmQi1dYfU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\background.png"
     },
     {
       "Identity": "C:\\Users\\Lenovo\\source\\repos\\Configuration_UI\\GUI_Adtech_V3\\wwwroot\\js\\site.js",
@@ -1645,6 +1687,170 @@
         {
           "Name": "integrity",
           "Value": "sha256-bblx/ZS1OZDCe4avKo6qt7O0Ap2g3ZAIRmdc7ocb7ns="
+        }
+      ]
+    },
+    {
+      "Route": "images/adtech.mxgj2jtzpc.png",
+      "AssetFile": "C:\\Users\\Lenovo\\source\\repos\\Configuration_UI\\GUI_Adtech_V3\\wwwroot\\images\\adtech.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2820"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"etorIGAUzrQF3ttfkjFiZ5dJq8vyqCCM2YVcwapZAkk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 16 Sep 2024 12:06:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "mxgj2jtzpc"
+        },
+        {
+          "Name": "label",
+          "Value": "images/adtech.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-etorIGAUzrQF3ttfkjFiZ5dJq8vyqCCM2YVcwapZAkk="
+        }
+      ]
+    },
+    {
+      "Route": "images/adtech.png",
+      "AssetFile": "C:\\Users\\Lenovo\\source\\repos\\Configuration_UI\\GUI_Adtech_V3\\wwwroot\\images\\adtech.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2820"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"etorIGAUzrQF3ttfkjFiZ5dJq8vyqCCM2YVcwapZAkk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 16 Sep 2024 12:06:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-etorIGAUzrQF3ttfkjFiZ5dJq8vyqCCM2YVcwapZAkk="
+        }
+      ]
+    },
+    {
+      "Route": "images/background.oe490i0au7.png",
+      "AssetFile": "C:\\Users\\Lenovo\\source\\repos\\Configuration_UI\\GUI_Adtech_V3\\wwwroot\\images\\background.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "144132"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"cHkxHMl+oR+0efezAoz1IJeI6HGz4iqN0UUmQi1dYfU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 16 Sep 2024 12:18:36 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "oe490i0au7"
+        },
+        {
+          "Name": "label",
+          "Value": "images/background.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-cHkxHMl+oR+0efezAoz1IJeI6HGz4iqN0UUmQi1dYfU="
+        }
+      ]
+    },
+    {
+      "Route": "images/background.png",
+      "AssetFile": "C:\\Users\\Lenovo\\source\\repos\\Configuration_UI\\GUI_Adtech_V3\\wwwroot\\images\\background.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "144132"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"cHkxHMl+oR+0efezAoz1IJeI6HGz4iqN0UUmQi1dYfU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 16 Sep 2024 12:18:36 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-cHkxHMl+oR+0efezAoz1IJeI6HGz4iqN0UUmQi1dYfU="
         }
       ]
     },
