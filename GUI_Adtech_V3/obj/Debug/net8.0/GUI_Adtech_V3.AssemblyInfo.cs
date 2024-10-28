@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GUI_Adtech_V3")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+035e9c69b14a371c0bd5d2af3e0828a3098b3ce1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+186c3a964a3e36852a606651052912c3dfdd576c")]
 [assembly: System.Reflection.AssemblyProductAttribute("GUI_Adtech_V3")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GUI_Adtech_V3")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

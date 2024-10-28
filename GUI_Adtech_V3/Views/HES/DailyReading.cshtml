@@ -42,23 +42,27 @@
 
 </style>
 
+@{
+    ViewData["Title"] = "Daily Reading Configuration";
+}
+
 <div class="container mt-5">
     <h2>Daily Reading Configuration</h2>
-    <form id="meterInstallationForm">
+    <form asp-action="DailyReadingConfig" method="post">
         <!-- Filewatcher Section -->
         <div class="form-section">
             <h4>Daily Reading</h4>
             <div class="mb-3">
                 <label for="filewatcherPath" class="form-label">Filewatcher Path</label>
-                <input type="text" class="form-control" id="filewatcherPath" placeholder="Enter Filewatcher Path">
+                <input type="text" class="form-control" name="filewatcherPath" value="@ViewBag.FilewatcherPath" placeholder="Enter Filewatcher Path">
             </div>
             <div class="mb-3">
                 <label for="dbLink" class="form-label">DB Link</label>
-                <input type="text" class="form-control" id="dbLink" placeholder="Enter DB Link">
+                <input type="text" class="form-control" name="dbLink" value="@ViewBag.DBLink" placeholder="Enter DB Link">
             </div>
             <div class="mb-3">
                 <label for="logfilePath" class="form-label">Logfile Path</label>
-                <input type="text" class="form-control" id="logfilePath" placeholder="Enter Logfile Path">
+                <input type="text" class="form-control" name="logfilePath" value="@ViewBag.LogfilePath" placeholder="Enter Logfile Path">
             </div>
         </div>
 
@@ -69,3 +73,4 @@
         </div>
     </form>
 </div>
+

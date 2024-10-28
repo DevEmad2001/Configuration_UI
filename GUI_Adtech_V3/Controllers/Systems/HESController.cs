@@ -110,10 +110,103 @@ namespace GUI_Adtech.Controllers.Systems
         }
 
 
-        public IActionResult DailyReading()
+        [HttpGet]
+        public async Task<IActionResult> DailyReading()
         {
+            // الحصول على القيم من قاعدة البيانات بناءً على ComponentName
+            var filewatcherPathConfig = await _configRepository.GetConfigByParameterAndComponentAsync("FilewatcherPath", "DailyReading");
+            var dbLinkConfig = await _configRepository.GetConfigByParameterAndComponentAsync("DBLink", "DailyReading");
+            var logfilePathConfig = await _configRepository.GetConfigByParameterAndComponentAsync("LogfilePath", "DailyReading");
+
+            // تمرير القيم إلى ViewBag لعرضها في الـ View
+            ViewBag.FilewatcherPath = filewatcherPathConfig?.ParameterValue;
+            ViewBag.DBLink = dbLinkConfig?.ParameterValue;
+            ViewBag.LogfilePath = logfilePathConfig?.ParameterValue;
+
             return View();
         }
+
+
+
+
+        [HttpPost]
+        public async Task<IActionResult> DailyReadingConfig(string filewatcherPath, string dbLink, string logfilePath)
+        {
+            string componentName = "DailyReading";
+
+            if (ModelState.IsValid)
+            {
+                // تحديث أو إضافة Filewatcher Path
+                var filewatcherPathConfig = await _configRepository.GetConfigByParameterAndComponentAsync("FilewatcherPath", componentName);
+                if (filewatcherPathConfig != null)
+                {
+                    filewatcherPathConfig.ParameterValue = filewatcherPath;
+                    filewatcherPathConfig.ModifiesDate = DateTime.Now;
+                    await _configRepository.UpdateConfigAsync(filewatcherPathConfig);
+                }
+                else
+                {
+                    filewatcherPathConfig = new AdtechConfig
+                    {
+                        ParameterName = "FilewatcherPath",
+                        ParameterValue = filewatcherPath,
+                        ComponentName = componentName,
+                        ModifiesDate = DateTime.Now
+                    };
+                    await _configRepository.AddConfigAsync(filewatcherPathConfig);
+                }
+
+                // تحديث أو إضافة DB Link
+                var dbLinkConfig = await _configRepository.GetConfigByParameterAndComponentAsync("DBLink", componentName);
+                if (dbLinkConfig != null)
+                {
+                    dbLinkConfig.ParameterValue = dbLink;
+                    dbLinkConfig.ModifiesDate = DateTime.Now;
+                    await _configRepository.UpdateConfigAsync(dbLinkConfig);
+                }
+                else
+                {
+                    dbLinkConfig = new AdtechConfig
+                    {
+                        ParameterName = "DBLink",
+                        ParameterValue = dbLink,
+                        ComponentName = componentName,
+                        ModifiesDate = DateTime.Now
+                    };
+                    await _configRepository.AddConfigAsync(dbLinkConfig);
+                }
+
+                // تحديث أو إضافة Log File Path
+                var logfilePathConfig = await _configRepository.GetConfigByParameterAndComponentAsync("LogfilePath", componentName);
+                if (logfilePathConfig != null)
+                {
+                    logfilePathConfig.ParameterValue = logfilePath;
+                    logfilePathConfig.ModifiesDate = DateTime.Now;
+                    await _configRepository.UpdateConfigAsync(logfilePathConfig);
+                }
+                else
+                {
+                    logfilePathConfig = new AdtechConfig
+                    {
+                        ParameterName = "LogfilePath",
+                        ParameterValue = logfilePath,
+                        ComponentName = componentName,
+                        ModifiesDate = DateTime.Now
+                    };
+                    await _configRepository.AddConfigAsync(logfilePathConfig);
+                }
+
+                // عرض رسالة نجاح
+                ViewBag.Message = "Daily Reading Configuration updated successfully!";
+                return RedirectToAction("DailyReading");
+            }
+
+            return View("DailyReading");
+        }
+
+
+
+
 
         [HttpGet]
         public async Task<IActionResult> DataService()

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "WE5rj2CrWvGWYlhmtdEbqDxNy/6Lv/vWee5oQ7CNezM=",
+  "Hash": "YbbMOwFgRmdYoZUzR/SjCHiUo6rVjs37V+ulpiH97fY=",
   "Source": "GUI_Adtech_V3",
   "BasePath": "_content/GUI_Adtech_V3",
   "Mode": "Default",
@@ -1549,7 +1549,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 23 Oct 2024 10:31:14 GMT"
+          "Value": "Mon, 28 Oct 2024 08:54:27 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1586,7 +1586,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 23 Oct 2024 10:31:14 GMT"
+          "Value": "Mon, 28 Oct 2024 08:54:27 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1631,7 +1631,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 23 Oct 2024 10:31:14 GMT"
+          "Value": "Mon, 28 Oct 2024 08:54:27 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1676,7 +1676,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 23 Oct 2024 10:31:14 GMT"
+          "Value": "Mon, 28 Oct 2024 08:54:27 GMT"
         },
         {
           "Name": "Cache-Control",

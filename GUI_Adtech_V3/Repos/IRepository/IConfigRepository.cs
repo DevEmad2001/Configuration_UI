@@ -15,5 +15,10 @@ namespace GUI_Adtech.Repositories
        Task AddConfigAsync(AdtechConfig config);
         Task UpdateConfigAsync(AdtechConfig config);
         Task DeleteConfigAsync(int id);
+
+        //add for Auth
+        Task UpdateOrInsertConfigAsync(string parameterName, string parameterValue, string componentName);
+        Task SetNullIfExistsAsync(string parameterName, string componentName);
+
     }
 }

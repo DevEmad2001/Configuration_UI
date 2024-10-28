@@ -62,5 +62,42 @@ namespace GUI_Adtech.Repositories
                 await _context.SaveChangesAsync();
             }
         }
+
+        //add for auth 
+        public async Task UpdateOrInsertConfigAsync(string parameterName, string parameterValue, string componentName)
+        {
+            var config = await _context.Configs.FirstOrDefaultAsync(c => c.ParameterName == parameterName && c.ComponentName == componentName);
+            if (config != null)
+            {
+                config.ParameterValue = parameterValue;
+                config.ModifiesDate = DateTime.Now;
+                _context.Update(config);
+            }
+            else
+            {
+                config = new AdtechConfig
+                {
+                    ParameterName = parameterName,
+                    ParameterValue = parameterValue,
+                    ComponentName = componentName,
+                    ModifiesDate = DateTime.Now
+                };
+                _context.Add(config);
+            }
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task SetNullIfExistsAsync(string parameterName, string componentName)
+        {
+            var config = await _context.Configs.FirstOrDefaultAsync(c => c.ParameterName == parameterName && c.ComponentName == componentName);
+            if (config != null)
+            {
+                config.ParameterValue = null;
+                config.ModifiesDate = DateTime.Now;
+                _context.Update(config);
+                await _context.SaveChangesAsync();
+            }
+        }
+
     }
 }
