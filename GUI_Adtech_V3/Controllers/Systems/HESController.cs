@@ -35,7 +35,7 @@ namespace GUI_Adtech.Controllers.Systems
         }
 
         [HttpPost]
-        public async Task<IActionResult> SaveMeterInstallationConfig(string filewatcherPath, string dbLink, string logfilePath)
+        public async Task<IActionResult> MeterInstallationConfig(string filewatcherPath, string dbLink, string logfilePath)
         {
             string componentName = "MeterInstallation";
 
@@ -115,11 +115,6 @@ namespace GUI_Adtech.Controllers.Systems
             return View();
         }
 
-        public IActionResult ControlService()
-        {
-            return View();
-        }
-
         [HttpGet]
         public async Task<IActionResult> DataService()
         {
@@ -147,6 +142,8 @@ namespace GUI_Adtech.Controllers.Systems
 
             return View();
         }
+
+
 
         [HttpPost]
         public async Task<IActionResult> SaveDataServiceConfig(string serviceURL, string binding, string protocol, string authentication, string username, string password, string token, IFormFile certificate)
@@ -332,6 +329,120 @@ namespace GUI_Adtech.Controllers.Systems
 
             return View("DataService");
         }
+
+
+
+
+
+        [HttpGet]
+        public async Task<IActionResult> ControlService()
+        {
+            // جلب القيم من قاعدة البيانات بناءً على ComponentName
+            var serviceURLConfig = await _configRepository.GetConfigByParameterAndComponentAsync("ServiceURL", "ControlService");
+            var bindingConfig = await _configRepository.GetConfigByParameterAndComponentAsync("Binding", "ControlService");
+            var protocolConfig = await _configRepository.GetConfigByParameterAndComponentAsync("Protocol", "ControlService");
+            var authenticationConfig = await _configRepository.GetConfigByParameterAndComponentAsync("Authentication", "ControlService");
+
+            ViewBag.ServiceURL = serviceURLConfig?.ParameterValue;
+            ViewBag.Binding = bindingConfig?.ParameterValue;
+            ViewBag.Protocol = protocolConfig?.ParameterValue;
+            ViewBag.Authentication = authenticationConfig?.ParameterValue;
+
+            if (authenticationConfig?.ParameterValue == "basic")
+            {
+                var usernameConfig = await _configRepository.GetConfigByParameterAndComponentAsync("Username", "ControlService");
+                var passwordConfig = await _configRepository.GetConfigByParameterAndComponentAsync("Password", "ControlService");
+                ViewBag.Username = usernameConfig?.ParameterValue;
+                ViewBag.Password = passwordConfig?.ParameterValue;
+            }
+            else if (authenticationConfig?.ParameterValue == "token")
+            {
+                var tokenConfig = await _configRepository.GetConfigByParameterAndComponentAsync("Token", "ControlService");
+                ViewBag.Token = tokenConfig?.ParameterValue;
+            }
+
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ControlService(
+            string serviceURL,
+            string binding,
+            string protocol,
+            string authentication,
+            string username,
+            string password,
+            string token,
+            IFormFile certificate)
+        {
+            string componentName = "ControlService";
+
+            if (ModelState.IsValid)
+            {
+                // تحديث أو إضافة ServiceURL
+                await UpdateOrInsertConfig("ServiceURL", serviceURL, componentName);
+
+                // تحديث أو إضافة Binding
+                await UpdateOrInsertConfig("Binding", binding, componentName);
+
+                // تحديث أو إضافة Protocol
+                await UpdateOrInsertConfig("Protocol", protocol, componentName);
+
+                // تحديث أو إضافة Authentication
+                await UpdateOrInsertConfig("Authentication", authentication, componentName);
+
+                // تحديث الحقول الخاصة بنوع المصادقة
+                if (authentication == "basic")
+                {
+                    await UpdateOrInsertConfig("Username", username, componentName);
+                    await UpdateOrInsertConfig("Password", password, componentName);
+                }
+                else if (authentication == "token")
+                {
+                    await UpdateOrInsertConfig("Token", token, componentName);
+                }
+                else if (authentication == "certificate" && certificate != null)
+                {
+                    // حفظ الشهادة (كمثال، حفظ مسار الشهادة)
+                    var certificatePath = Path.Combine("wwwroot/uploads", certificate.FileName);
+                    using (var stream = new FileStream(certificatePath, FileMode.Create))
+                    {
+                        await certificate.CopyToAsync(stream);
+                    }
+                    await UpdateOrInsertConfig("CertificatePath", certificatePath, componentName);
+                }
+
+                // عرض رسالة نجاح
+                TempData["Message"] = "Control Service Configuration updated successfully!";
+                return RedirectToAction("ControlService");
+            }
+
+            return View();
+        }
+
+        // دالة مساعدة للتحديث أو الإضافة
+        private async Task UpdateOrInsertConfig(string parameterName, string parameterValue, string componentName)
+        {
+            var config = await _configRepository.GetConfigByParameterAndComponentAsync(parameterName, componentName);
+            if (config != null)
+            {
+                config.ParameterValue = parameterValue;
+                config.ModifiesDate = DateTime.Now;
+                await _configRepository.UpdateConfigAsync(config);
+            }
+            else
+            {
+                await _configRepository.AddConfigAsync(new AdtechConfig
+                {
+                    ParameterName = parameterName,
+                    ParameterValue = parameterValue,
+                    ComponentName = componentName,
+                    ModifiesDate = DateTime.Now
+                });
+            }
+        }
+
+
 
     }
 }
