@@ -37,6 +37,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 // ????? IConfigRepository ? ConfigRepository ?? ??? Dependency Injection
 builder.Services.AddScoped<IConfigRepository, ConfigRepository>();
+builder.Services.AddScoped<IAuthConfigRepository, AuthConfigRepository>();
+
 
 // ????? ??????? ??? ???????
 builder.Services.AddControllersWithViews();

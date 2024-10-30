@@ -1,16 +1,19 @@
 ﻿using GUI_Adtech.Models;
 using GUI_Adtech.Repositories;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 namespace GUI_Adtech.Controllers.Systems
 {
     public class HESController : Controller
     {
         private readonly IConfigRepository _configRepository;
+        private readonly IAuthConfigRepository _authConfigRepository;
 
-        public HESController(IConfigRepository configRepository)
+        public HESController(IConfigRepository configRepository, IAuthConfigRepository authConfigRepository)
         {
             _configRepository = configRepository;
+            _authConfigRepository = authConfigRepository;
         }
 
         public IActionResult Index()
@@ -427,35 +430,24 @@ namespace GUI_Adtech.Controllers.Systems
 
 
 
+
         [HttpGet]
         public async Task<IActionResult> ControlService()
         {
-            // جلب القيم من قاعدة البيانات بناءً على ComponentName
-            var serviceURLConfig = await _configRepository.GetConfigByParameterAndComponentAsync("ServiceURL", "ControlService");
-            var bindingConfig = await _configRepository.GetConfigByParameterAndComponentAsync("Binding", "ControlService");
-            var protocolConfig = await _configRepository.GetConfigByParameterAndComponentAsync("Protocol", "ControlService");
-            var authenticationConfig = await _configRepository.GetConfigByParameterAndComponentAsync("Authentication", "ControlService");
-
-            ViewBag.ServiceURL = serviceURLConfig?.ParameterValue;
-            ViewBag.Binding = bindingConfig?.ParameterValue;
-            ViewBag.Protocol = protocolConfig?.ParameterValue;
-            ViewBag.Authentication = authenticationConfig?.ParameterValue;
-
-            if (authenticationConfig?.ParameterValue == "basic")
-            {
-                var usernameConfig = await _configRepository.GetConfigByParameterAndComponentAsync("Username", "ControlService");
-                var passwordConfig = await _configRepository.GetConfigByParameterAndComponentAsync("Password", "ControlService");
-                ViewBag.Username = usernameConfig?.ParameterValue;
-                ViewBag.Password = passwordConfig?.ParameterValue;
-            }
-            else if (authenticationConfig?.ParameterValue == "token")
-            {
-                var tokenConfig = await _configRepository.GetConfigByParameterAndComponentAsync("Token", "ControlService");
-                ViewBag.Token = tokenConfig?.ParameterValue;
-            }
+            // جلب البيانات الحالية من قاعدة البيانات بناءً على ComponentName = "ControlService"
+            ViewBag.ServiceURL = (await _authConfigRepository.GetConfigAsync("ServiceURL", "ControlService"))?.ParameterValue;
+            ViewBag.Binding = (await _authConfigRepository.GetConfigAsync("Binding", "ControlService"))?.ParameterValue;
+            ViewBag.Protocol = (await _authConfigRepository.GetConfigAsync("Protocol", "ControlService"))?.ParameterValue;
+            ViewBag.Authentication = (await _authConfigRepository.GetConfigAsync("Authentication", "ControlService"))?.ParameterValue;
+            ViewBag.Username = (await _authConfigRepository.GetConfigAsync("Username", "ControlService"))?.ParameterValue;
+            ViewBag.Password = (await _authConfigRepository.GetConfigAsync("Password", "ControlService"))?.ParameterValue;
+            ViewBag.Token = (await _authConfigRepository.GetConfigAsync("Token", "ControlService"))?.ParameterValue;
+            ViewBag.CertificatePath = (await _authConfigRepository.GetConfigAsync("CertificatePath", "ControlService"))?.ParameterValue;
 
             return View();
         }
+
+
 
         [HttpPost]
         public async Task<IActionResult> ControlService(
@@ -468,74 +460,72 @@ namespace GUI_Adtech.Controllers.Systems
             string token,
             IFormFile certificate)
         {
-            string componentName = "ControlService";
-
             if (ModelState.IsValid)
             {
-                // تحديث أو إضافة ServiceURL
-                await UpdateOrInsertConfig("ServiceURL", serviceURL, componentName);
+                string componentName = "ControlService";
 
-                // تحديث أو إضافة Binding
-                await UpdateOrInsertConfig("Binding", binding, componentName);
+                // تحديث أو إضافة القيم الأساسية
+                await UpdateOrAddConfig("ServiceURL", serviceURL, componentName);
+                await UpdateOrAddConfig("Binding", binding, componentName);
+                await UpdateOrAddConfig("Protocol", protocol, componentName);
+                await UpdateOrAddConfig("Authentication", authentication, componentName);
 
-                // تحديث أو إضافة Protocol
-                await UpdateOrInsertConfig("Protocol", protocol, componentName);
-
-                // تحديث أو إضافة Authentication
-                await UpdateOrInsertConfig("Authentication", authentication, componentName);
-
-                // تحديث الحقول الخاصة بنوع المصادقة
-                if (authentication == "basic")
+                // خيارات المصادقة بناءً على الاختيار
+                switch (authentication)
                 {
-                    await UpdateOrInsertConfig("Username", username, componentName);
-                    await UpdateOrInsertConfig("Password", password, componentName);
-                }
-                else if (authentication == "token")
-                {
-                    await UpdateOrInsertConfig("Token", token, componentName);
-                }
-                else if (authentication == "certificate" && certificate != null)
-                {
-                    // حفظ الشهادة (كمثال، حفظ مسار الشهادة)
-                    var certificatePath = Path.Combine("wwwroot/uploads", certificate.FileName);
-                    using (var stream = new FileStream(certificatePath, FileMode.Create))
-                    {
-                        await certificate.CopyToAsync(stream);
-                    }
-                    await UpdateOrInsertConfig("CertificatePath", certificatePath, componentName);
+                    case "basic":
+                        await UpdateOrAddConfig("Username", username, componentName);
+                        await UpdateOrAddConfig("Password", password, componentName);
+                        break;
+
+                    case "token":
+                        await UpdateOrAddConfig("Token", token, componentName);
+                        break;
+
+                    case "certificate":
+                        if (certificate != null && certificate.Length > 0)
+                        {
+                            var filePath = Path.Combine("wwwroot/certificates", certificate.FileName);
+                            Directory.CreateDirectory(Path.GetDirectoryName(filePath));
+                            using (var stream = new FileStream(filePath, FileMode.Create))
+                            {
+                                await certificate.CopyToAsync(stream);
+                            }
+                            await UpdateOrAddConfig("CertificatePath", filePath, componentName);
+                        }
+                        break;
                 }
 
-                // عرض رسالة نجاح
-                TempData["Message"] = "Control Service Configuration updated successfully!";
+                TempData["Message"] = "تم تحديث الإعدادات بنجاح!";
                 return RedirectToAction("ControlService");
             }
 
             return View();
         }
 
-        // دالة مساعدة للتحديث أو الإضافة
-        private async Task UpdateOrInsertConfig(string parameterName, string parameterValue, string componentName)
+
+
+        private async Task UpdateOrAddConfig(string parameterName, string parameterValue, string componentName)
         {
-            var config = await _configRepository.GetConfigByParameterAndComponentAsync(parameterName, componentName);
+            var config = await _authConfigRepository.GetConfigAsync(parameterName, componentName);
             if (config != null)
             {
                 config.ParameterValue = parameterValue;
                 config.ModifiesDate = DateTime.Now;
-                await _configRepository.UpdateConfigAsync(config);
+                await _authConfigRepository.UpdateConfigAsync(config);
             }
             else
             {
-                await _configRepository.AddConfigAsync(new AdtechConfig
+                await _authConfigRepository.AddConfigAsync(new AdtechConfig
                 {
                     ParameterName = parameterName,
                     ParameterValue = parameterValue,
-                    ComponentName = componentName,
-                    ModifiesDate = DateTime.Now
+                    ModifiesDate = DateTime.Now,
+                    ComponentName = componentName
                 });
             }
         }
 
-
-
-    }
+    } 
 }
+
