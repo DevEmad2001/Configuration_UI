@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿
+
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -54,65 +57,99 @@
 </head>
 <body>
     <div class="container mt-5">
+        <!-- Success message -->
+        @if (TempData["Message"] != null)
+        {
+            <div id="successMessage" class="alert alert-success">
+                @TempData["Message"]
+            </div>
+        }
+
         <h2>Data Service Configuration</h2>
-        <form asp-action="SaveDataServiceConfig" method="post" enctype="multipart/form-data">
-            <!-- First Section -->
+        <form asp-action="DataService" method="post" enctype="multipart/form-data">
+            <!-- Service Information Section -->
             <div class="form-section">
+                <h4>Service Information</h4>
                 <div class="mb-3">
                     <label for="serviceURL" class="form-label">Service URL</label>
-                    <input type="text" class="form-control" id="serviceURL" name="serviceURL" placeholder="Enter Service URL">
+                    <input type="text" class="form-control" name="serviceURL" value="@ViewBag.ServiceURL" placeholder="Enter Service URL" />
                 </div>
                 <div class="mb-3">
                     <label for="binding" class="form-label">Binding</label>
-                    <input type="text" class="form-control" id="binding" name="binding" placeholder="Enter Binding">
+                    <input type="text" class="form-control" name="binding" value="@ViewBag.Binding" placeholder="Enter Binding" />
                 </div>
                 <div class="mb-3">
                     <label for="protocol" class="form-label">Protocol</label>
-                    <input type="text" class="form-control" id="protocol" name="protocol" placeholder="Enter Protocol">
+                    <input type="text" class="form-control" name="protocol" value="@ViewBag.Protocol" placeholder="Enter Protocol" />
                 </div>
-            </div>
-
-            <!-- Authentication Form Section -->
-            <div class="form-section">
                 <div class="mb-3">
                     <label for="authentication" class="form-label">Authentication</label>
-                    <select class="form-select" id="authentication" name="authentication">
-                        <option value="" selected disabled>Choose Authentication</option>
-                        <option value="basic">Basic</option>
-                        <option value="certificate">Certificate</option>
-                        <option value="token">Token</option>
+
+                    <select class="form-select" name="authentication" id="authentication">
+                        <option value="" disabled>Choose Authentication</option>
+
+                        @if (ViewBag.Authentication == "basic")
+                        {
+                            <option value="basic" selected>Basic</option>
+                        }
+                        else
+                        {
+                            <option value="basic">Basic</option>
+                        }
+
+                        @if (ViewBag.Authentication == "certificate")
+                        {
+                            <option value="certificate" selected>Certificate</option>
+                        }
+                        else
+                        {
+                            <option value="certificate">Certificate</option>
+                        }
+
+                        @if (ViewBag.Authentication == "token")
+                        {
+                            <option value="token" selected>Token</option>
+                        }
+                        else
+                        {
+                            <option value="token">Token</option>
+                        }
                     </select>
                 </div>
             </div>
 
-            <!-- Basic Authentication Form Section -->
+            <!-- Basic Authentication Section -->
             <div id="basicAuthForm" class="form-section hidden">
                 <h4>Basic Authentication</h4>
                 <div class="mb-3">
                     <label for="username" class="form-label">Username</label>
-                    <input type="text" class="form-control" id="username" name="username" placeholder="Enter Username">
+                    <input type="text" class="form-control" name="username" value="@ViewBag.Username" placeholder="Enter Username" />
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="password" name="password" placeholder="Enter Password">
+                    <input type="password" class="form-control" name="password" value="@ViewBag.Password" placeholder="Enter Password" />
                 </div>
             </div>
 
-            <!-- Certificate Authentication Form Section -->
+            <!-- Certificate Authentication Section -->
             <div id="certificateAuthForm" class="form-section hidden">
                 <h4>Certificate Authentication</h4>
                 <div class="mb-3">
-                    <label for="certificate" class="form-label">Upload Certificate</label>
-                    <input type="file" class="form-control" id="certificate" name="certificate">
+                    <label for="certificateName" class="form-label">Certificate Name</label>
+                    <input type="text" class="form-control" name="certificateName" value="@ViewBag.CertificateName" placeholder="Enter Certificate Name" />
+                </div>
+                <div class="mb-3">
+                    <label for="certificatePassword" class="form-label">Certificate Password</label>
+                    <input type="password" class="form-control" name="certificatePassword" value="@ViewBag.CertificatePassword" placeholder="Enter Certificate Password" />
                 </div>
             </div>
 
-            <!-- Token Authentication Form Section -->
+            <!-- Token Authentication Section -->
             <div id="tokenAuthForm" class="form-section hidden">
                 <h4>Token Authentication</h4>
                 <div class="mb-3">
-                    <label for="token" class="form-label">Enter Token</label>
-                    <input type="text" class="form-control" id="token" name="token" placeholder="Enter Token">
+                    <label for="token" class="form-label">Token</label>
+                    <input type="text" class="form-control" name="token" value="@ViewBag.Token" placeholder="Enter Token" />
                 </div>
             </div>
 
@@ -131,14 +168,11 @@
             var certificateAuthForm = document.getElementById('certificateAuthForm');
             var tokenAuthForm = document.getElementById('tokenAuthForm');
 
-            authSelect.addEventListener('change', function () {
-                // Hide all sections initially
+            function showAuthSection(authType) {
                 basicAuthForm.classList.add('hidden');
                 certificateAuthForm.classList.add('hidden');
                 tokenAuthForm.classList.add('hidden');
 
-                // Show the relevant section based on selection
-                var authType = this.value;
                 if (authType === 'basic') {
                     basicAuthForm.classList.remove('hidden');
                 } else if (authType === 'certificate') {
@@ -146,9 +180,21 @@
                 } else if (authType === 'token') {
                     tokenAuthForm.classList.remove('hidden');
                 }
+            }
+
+            showAuthSection(authSelect.value);
+
+            authSelect.addEventListener('change', function () {
+                showAuthSection(this.value);
             });
         });
-    </script>
 
+        setTimeout(function () {
+            var messageElement = document.getElementById("successMessage");
+            if (messageElement) {
+                messageElement.style.display = "none";
+            }
+        }, 5000);
+    </script>
 </body>
 </html>

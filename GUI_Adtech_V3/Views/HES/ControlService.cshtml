@@ -1,6 +1,9 @@
-﻿@* 
+﻿
 
-<!DOCTYPE html>
+
+
+
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -15,9 +18,9 @@
             border-radius: 5px;
         }
 
-            .form-section h4 {
-                margin-bottom: 15px;
-            }
+        .form-section h4 {
+            margin-bottom: 15px;
+        }
 
         .hidden {
             display: none;
@@ -29,9 +32,9 @@
             border-color: #001f3f;
         }
 
-            .btn-custom:hover {
-                background-color: #0056b3;
-            }
+        .btn-custom:hover {
+            background-color: #0056b3;
+        }
 
         .btn-cancel {
             background-color: #d9534f;
@@ -39,9 +42,9 @@
             border-color: #d9534f;
         }
 
-            .btn-cancel:hover {
-                background-color: #c9302c;
-            }
+        .btn-cancel:hover {
+            background-color: #c9302c;
+        }
 
         .button-group {
             display: flex;
@@ -49,9 +52,9 @@
             margin-top: 30px;
         }
 
-            .button-group button {
-                margin-left: 10px;
-            }
+        .button-group button {
+            margin-left: 10px;
+        }
     </style>
 </head>
 <body>
@@ -83,6 +86,8 @@
                 </div>
                 <div class="mb-3">
                     <label for="authentication" class="form-label">Authentication</label>
+
+
                     <select class="form-select" name="authentication" id="authentication">
                         <option value="" disabled>Choose Authentication</option>
 
@@ -113,6 +118,8 @@
                             <option value="token">Token</option>
                         }
                     </select>
+
+
                 </div>
             </div>
 
@@ -133,8 +140,8 @@
             <div id="certificateAuthForm" class="form-section hidden">
                 <h4>Certificate Authentication</h4>
                 <div class="mb-3">
-                    <label for="certificate" class="form-label">Upload Certificate</label>
-                    <input type="file" class="form-control" name="certificate" id="certificate">
+                    <label for="certificatePath" class="form-label">Upload Certificate Path</label>
+                    <input type="text" class="form-control" name="certificatePath" value="@ViewBag.CertificatePath" placeholder="Enter Certificate Path" />
                 </div>
             </div>
 
@@ -162,14 +169,13 @@
             var certificateAuthForm = document.getElementById('certificateAuthForm');
             var tokenAuthForm = document.getElementById('tokenAuthForm');
 
-            authSelect.addEventListener('change', function () {
-                // Hide all sections initially
+            function showAuthSection(authType) {
+                // إخفاء جميع الأقسام
                 basicAuthForm.classList.add('hidden');
                 certificateAuthForm.classList.add('hidden');
                 tokenAuthForm.classList.add('hidden');
 
-                // Show the relevant section based on selection
-                var authType = this.value;
+                // إظهار القسم المطلوب بناءً على الاختيار
                 if (authType === 'basic') {
                     basicAuthForm.classList.remove('hidden');
                 } else if (authType === 'certificate') {
@@ -177,10 +183,18 @@
                 } else if (authType === 'token') {
                     tokenAuthForm.classList.remove('hidden');
                 }
+            }
+
+            // تشغيل وظيفة إظهار النموذج بناءً على القيمة الحالية عند تحميل الصفحة
+            showAuthSection(authSelect.value);
+
+            // تغيير الأقسام عند تغيير الاختيار في القائمة المنسدلة
+            authSelect.addEventListener('change', function () {
+                showAuthSection(this.value);
             });
         });
 
-        // Hide success message after 5 seconds
+        // إخفاء رسالة النجاح بعد 5 ثوانٍ
         setTimeout(function () {
             var messageElement = document.getElementById("successMessage");
             if (messageElement) {
@@ -190,95 +204,8 @@
     </script>
 </body>
 </html>
- *@
 
 
 
-<div class="container mt-5">
-    <h2>Control Service Configuration</h2>
-    @if (TempData["Message"] != null)
-    {
-        <div class="alert alert-success">
-            @TempData["Message"]
-        </div>
-    }
-    <form asp-action="ControlService" method="post" enctype="multipart/form-data">
-        <div class="form-section">
-            <h4>Service Information</h4>
-            <div class="mb-3">
-                <label for="serviceURL" class="form-label">Service URL</label>
-                <input type="text" class="form-control" name="serviceURL" value="@ViewBag.ServiceURL" placeholder="Enter Service URL" />
-            </div>
-            <div class="mb-3">
-                <label for="binding" class="form-label">Binding</label>
-                <input type="text" class="form-control" name="binding" value="@ViewBag.Binding" placeholder="Enter Binding" />
-            </div>
-            <div class="mb-3">
-                <label for="protocol" class="form-label">Protocol</label>
-                <input type="text" class="form-control" name="protocol" value="@ViewBag.Protocol" placeholder="Enter Protocol" />
-            </div>
-            <div class="mb-3">
-                <label for="authentication" class="form-label">Authentication</label>
-                <select class="form-select" name="authentication" id="authentication">
-                    <option value="" disabled>Choose Authentication</option>
-                    <option value="basic" selected="@ViewBag.Authentication == " basic"">Basic</option>
-                    <option value="certificate" selected="@ViewBag.Authentication == " certificate"">Certificate</option>
-                    <option value="token" selected="@ViewBag.Authentication == " token"">Token</option>
-                </select>
-            </div>
-        </div>
 
-        <!-- Basic Authentication -->
-        <div id="basicAuthForm" class="form-section hidden">
-            <h4>Basic Authentication</h4>
-            <div class="mb-3">
-                <label for="username" class="form-label">Username</label>
-                <input type="text" class="form-control" name="username" value="@ViewBag.Username" placeholder="Enter Username" />
-            </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" name="password" value="@ViewBag.Password" placeholder="Enter Password" />
-            </div>
-        </div>
 
-        <!-- Certificate Authentication -->
-        <div id="certificateAuthForm" class="form-section hidden">
-            <h4>Certificate Authentication</h4>
-            <div class="mb-3">
-                <label for="certificate" class="form-label">Upload Certificate</label>
-                <input type="file" class="form-control" name="certificate" />
-            </div>
-        </div>
-
-        <!-- Token Authentication -->
-        <div id="tokenAuthForm" class="form-section hidden">
-            <h4>Token Authentication</h4>
-            <div class="mb-3">
-                <label for="token" class="form-label">Token</label>
-                <input type="text" class="form-control" name="token" value="@ViewBag.Token" placeholder="Enter Token" />
-            </div>
-        </div>
-
-        <div class="button-group mt-4">
-            <button type="submit" class="btn btn-primary">Save</button>
-            <button type="button" class="btn btn-danger">Cancel</button>
-        </div>
-    </form>
-</div>
-
-<script>
-    document.getElementById('authentication').addEventListener('change', function () {
-        document.getElementById('basicAuthForm').classList.add('hidden');
-        document.getElementById('certificateAuthForm').classList.add('hidden');
-        document.getElementById('tokenAuthForm').classList.add('hidden');
-
-        var authType = this.value;
-        if (authType === 'basic') {
-            document.getElementById('basicAuthForm').classList.remove('hidden');
-        } else if (authType === 'certificate') {
-            document.getElementById('certificateAuthForm').classList.remove('hidden');
-        } else if (authType === 'token') {
-            document.getElementById('tokenAuthForm').classList.remove('hidden');
-        }
-    });
-</script>

@@ -20,5 +20,7 @@ namespace GUI_Adtech.Repositories
         Task UpdateOrInsertConfigAsync(string parameterName, string parameterValue, string componentName);
         Task SetNullIfExistsAsync(string parameterName, string componentName);
 
+
+        
     }
 }
