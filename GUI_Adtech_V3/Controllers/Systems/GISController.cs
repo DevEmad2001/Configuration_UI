@@ -24,8 +24,16 @@ namespace GUI_Adtech.Controllers.Systems
             return View();
         }
 
+
+
+
+
+
+
+
+
         [HttpGet]
-        public async Task<IActionResult> GISUDAConfig()
+        public async Task<IActionResult> GISUDA()
         {
             var serviceURLConfig = await _configRepository.GetConfigByParameterAndComponentAsync("ServiceURL", "GISUDA");
             var bindingConfig = await _configRepository.GetConfigByParameterAndComponentAsync("Binding", "GISUDA");
@@ -51,7 +59,7 @@ namespace GUI_Adtech.Controllers.Systems
         }
 
         [HttpPost]
-        public async Task<IActionResult> GISUDAConfig(
+        public async Task<IActionResult> GISUDA(
             string serviceURL,
             string binding,
             string protocol,
@@ -62,50 +70,57 @@ namespace GUI_Adtech.Controllers.Systems
             string certificatePassword,
             string token)
         {
-            string componentName = "GISUDA";
-
             if (ModelState.IsValid)
             {
-                await _configRepository.UpdateOrInsertConfigAsync("ServiceURL", serviceURL, componentName);
-                await _configRepository.UpdateOrInsertConfigAsync("Binding", binding, componentName);
-                await _configRepository.UpdateOrInsertConfigAsync("Protocol", protocol, componentName);
-                await _configRepository.UpdateOrInsertConfigAsync("Authentication", authentication, componentName);
+                await UpdateOrInsertConfigAsync("ServiceURL", serviceURL, "GISUDA");
+                await UpdateOrInsertConfigAsync("Binding", binding, "GISUDA");
+                await UpdateOrInsertConfigAsync("Protocol", protocol, "GISUDA");
+                await UpdateOrInsertConfigAsync("Authentication", authentication, "GISUDA");
+                await UpdateOrInsertConfigAsync("BasicUsername", basicUsername, "GISUDA");
+                await UpdateOrInsertConfigAsync("BasicPassword", basicPassword, "GISUDA");
+                await UpdateOrInsertConfigAsync("CertificatePath", certificatePath, "GISUDA");
+                await UpdateOrInsertConfigAsync("CertificatePassword", certificatePassword, "GISUDA");
+                await UpdateOrInsertConfigAsync("Token", token, "GISUDA");
 
-                if (authentication == "basic")
-                {
-                    await _configRepository.UpdateOrInsertConfigAsync("BasicUsername", basicUsername, componentName);
-                    await _configRepository.UpdateOrInsertConfigAsync("BasicPassword", basicPassword, componentName);
-                    await ClearUnusedFieldsAsync(componentName, new[] { "BasicUsername", "BasicPassword" });
-                }
-                else if (authentication == "certificate")
-                {
-                    await _configRepository.UpdateOrInsertConfigAsync("CertificatePath", certificatePath, componentName);
-                    await _configRepository.UpdateOrInsertConfigAsync("CertificatePassword", certificatePassword, componentName);
-                    await ClearUnusedFieldsAsync(componentName, new[] { "CertificatePath", "CertificatePassword" });
-                }
-                else if (authentication == "token")
-                {
-                    await _configRepository.UpdateOrInsertConfigAsync("Token", token, componentName);
-                    await ClearUnusedFieldsAsync(componentName, new[] { "Token" });
-                }
-
-                TempData["Message"] = "GISUDA Configuration updated successfully!";
-                return RedirectToAction("GISUDAConfig");
+                TempData["Message"] = "GIS UDA Configuration updated successfully!";
+                return RedirectToAction("GISUDA");
             }
 
             return View();
         }
 
-        private async Task ClearUnusedFieldsAsync(string componentName, string[] exclude)
+        private async Task UpdateOrInsertConfigAsync(string parameterName, string parameterValue, string componentName)
         {
-            var unusedFields = new[] { "BasicUsername", "BasicPassword", "Token", "CertificatePath", "CertificatePassword" };
-            foreach (var field in unusedFields)
+            var config = await _configRepository.GetConfigByParameterAndComponentAsync(parameterName, componentName);
+            if (config != null)
             {
-                if (Array.IndexOf(exclude, field) < 0)
+                config.ParameterValue = parameterValue;
+                config.ModifiesDate = DateTime.Now;
+                await _configRepository.UpdateConfigAsync(config);
+            }
+            else
+            {
+                config = new AdtechConfig
                 {
-                    await _configRepository.SetNullIfExistsAsync(field, componentName);
-                }
+                    ParameterName = parameterName,
+                    ParameterValue = parameterValue,
+                    ComponentName = componentName,
+                    ModifiesDate = DateTime.Now
+                };
+                await _configRepository.AddConfigAsync(config);
             }
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
