@@ -1,67 +1,4 @@
-﻿@* <form asp-action="GISUDAConfig" method="post" enctype="multipart/form-data">
-    <!-- Service Information Section -->
-    <div class="form-section">
-        <h4>Service Information</h4>
-        <div class="mb-3">
-            <label for="serviceURL" class="form-label">Service URL</label>
-            <input type="text" class="form-control" name="serviceURL" value="@ViewBag.ServiceURL" placeholder="Enter Service URL" />
-        </div>
-        <div class="mb-3">
-            <label for="binding" class="form-label">Binding</label>
-            <input type="text" class="form-control" name="binding" value="@ViewBag.Binding" placeholder="Enter Binding" />
-        </div>
-        <div class="mb-3">
-            <label for="protocol" class="form-label">Protocol</label>
-            <input type="text" class="form-control" name="protocol" value="@ViewBag.Protocol" placeholder="Enter Protocol" />
-        </div>
-        <div class="mb-3">
-            <label for="authentication" class="form-label">Authentication</label>
-            <select class="form-select" name="authentication" id="authentication">
-                <option value="" disabled>Choose Authentication</option>
-                <option value="basic" @(ViewBag.Authentication == "basic" ? "selected" : "")>Basic</option>
-                <option value="certificate" @(ViewBag.Authentication == "certificate" ? "selected" : "")>Certificate</option>
-                <option value="token" @(ViewBag.Authentication == "token" ? "selected" : "")>Token</option> 
-            </select>
-        </div>
-    </div>
-    <!-- Basic Authentication Section -->
-    <div id="basicAuthForm" class="form-section hidden">
-        <h4>Basic Authentication</h4>
-        <div class="mb-3">
-            <label for="basicUsername" class="form-label">Username</label>
-            <input type="text" class="form-control" name="basicUsername" value="@ViewBag.BasicUsername" placeholder="Enter Username" />
-        </div>
-        <div class="mb-3">
-            <label for="basicPassword" class="form-label">Password</label>
-            <input type="password" class="form-control" name="basicPassword" value="@ViewBag.BasicPassword" placeholder="Enter Password" />
-        </div>
-    </div>
-    <!-- Certificate Authentication Section -->
-    <div id="certificateAuthForm" class="form-section hidden">
-        <h4>Certificate Authentication</h4>
-        <div class="mb-3">
-            <label for="certificatePath" class="form-label">Certificate Path</label>
-            <input type="text" class="form-control" name="certificatePath" value="@ViewBag.CertificatePath" placeholder="Enter Certificate Path" />
-        </div>
-        <div class="mb-3">
-            <label for="certificatePassword" class="form-label">Certificate Password</label>
-            <input type="password" class="form-control" name="certificatePassword" value="@ViewBag.CertificatePassword" placeholder="Enter Certificate Password" />
-        </div>
-    </div>
-    <!-- Token Authentication Section -->
-    <div id="tokenAuthForm" class="form-section hidden">
-        <h4>Token Authentication</h4>
-        <div class="mb-3">
-            <label for="token" class="form-label">Token</label>
-            <input type="text" class="form-control" name="token" value="@ViewBag.Token" placeholder="Enter Token" />
-        </div>
-    </div>
-    <div class="button-group">
-        <button type="submit" class="btn btn-custom">Save</button>
-        <button type="button" class="btn btn-cancel">Cancel</button>
-    </div>
-</form>
- *@
+﻿@* 
 
 
 
@@ -131,6 +68,237 @@
         }
 
         <h2>GIS UDA Configuration</h2>
+        <form asp-action="GISUDA" method="post" enctype="multipart/form-data">
+            <!-- Service Information Section -->
+            <div class="form-section">
+                <h4>Service Information</h4>
+                <div class="mb-3">
+                    <label for="serviceURL" class="form-label">Service URL</label>
+                    <input type="text" class="form-control" name="serviceURL" value="@ViewBag.ServiceURL" placeholder="Enter Service URL" />
+                </div>
+                <div class="mb-3">
+                    <label for="binding" class="form-label">Binding</label>
+                    <input type="text" class="form-control" name="binding" value="@ViewBag.Binding" placeholder="Enter Binding" />
+                </div>
+                <div class="mb-3">
+                    <label for="protocol" class="form-label">Protocol</label>
+                    <input type="text" class="form-control" name="protocol" value="@ViewBag.Protocol" placeholder="Enter Protocol" />
+                </div>
+                <div class="mb-3">
+                    <label for="authentication" class="form-label">Authentication</label>
+                    <select class="form-select" name="authentication" id="authentication">
+                        <option value="" disabled>Choose Authentication</option>
+
+                        @if (ViewBag.Authentication == "basic")
+                        {
+                            <option value="basic" selected>Basic</option>
+                        }
+                        else
+                        {
+                            <option value="basic">Basic</option>
+                        }
+
+                        @if (ViewBag.Authentication == "certificate")
+                        {
+                            <option value="certificate" selected>Certificate</option>
+                        }
+                        else
+                        {
+                            <option value="certificate">Certificate</option>
+                        }
+
+                        @if (ViewBag.Authentication == "token")
+                        {
+                            <option value="token" selected>Token</option>
+                        }
+                        else
+                        {
+                            <option value="token">Token</option>
+                        }
+                    </select>
+                </div>
+            </div>
+
+            <!-- Basic Authentication Section -->
+            <div id="basicAuthForm" class="form-section hidden">
+                <h4>Basic Authentication</h4>
+                <div class="mb-3">
+                    <label for="basicUsername" class="form-label">Username</label>
+                    <input type="text" class="form-control" name="basicUsername" value="@ViewBag.BasicUsername" placeholder="Enter Username" />
+                </div>
+                <div class="mb-3">
+                    <label for="basicPassword" class="form-label">Password</label>
+                    <input type="password" class="form-control" name="basicPassword" value="@ViewBag.BasicPassword" placeholder="Enter Password" />
+                </div>
+            </div>
+
+            <!-- Certificate Authentication Section -->
+            <div id="certificateAuthForm" class="form-section hidden">
+                <h4>Certificate Authentication</h4>
+                <div class="mb-3">
+                    <label for="certificatePath" class="form-label">Certificate Path</label>
+                    <input type="text" class="form-control" name="certificatePath" value="@ViewBag.CertificatePath" placeholder="Enter Certificate Path" />
+                </div>
+                <div class="mb-3">
+                    <label for="certificatePassword" class="form-label">Certificate Password</label>
+                    <input type="password" class="form-control" name="certificatePassword" value="@ViewBag.CertificatePassword" placeholder="Enter Certificate Password" />
+                </div>
+            </div>
+
+            <!-- Token Authentication Section -->
+            <div id="tokenAuthForm" class="form-section hidden">
+                <h4>Token Authentication</h4>
+                <div class="mb-3">
+                    <label for="token" class="form-label">Token</label>
+                    <input type="text" class="form-control" name="token" value="@ViewBag.Token" placeholder="Enter Token" />
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button type="submit" class="btn btn-custom">Save</button>
+                <button type="button" class="btn btn-cancel">Cancel</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var authSelect = document.getElementById('authentication');
+            var basicAuthForm = document.getElementById('basicAuthForm');
+            var certificateAuthForm = document.getElementById('certificateAuthForm');
+            var tokenAuthForm = document.getElementById('tokenAuthForm');
+
+            function showAuthSection(authType) {
+                basicAuthForm.classList.add('hidden');
+                certificateAuthForm.classList.add('hidden');
+                tokenAuthForm.classList.add('hidden');
+
+                if (authType === 'basic') {
+                    basicAuthForm.classList.remove('hidden');
+                } else if (authType === 'certificate') {
+                    certificateAuthForm.classList.remove('hidden');
+                } else if (authType === 'token') {
+                    tokenAuthForm.classList.remove('hidden');
+                }
+            }
+
+            showAuthSection(authSelect.value);
+
+            authSelect.addEventListener('change', function () {
+                showAuthSection(this.value);
+            });
+        });
+
+        setTimeout(function () {
+            var messageElement = document.getElementById("successMessage");
+            if (messageElement) {
+                messageElement.style.display = "none";
+            }
+        }, 5000);
+    </script>
+</body>
+</html>
+
+
+
+
+ *@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIS UDA Configuration</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f5f5f5;
+            font-family: Arial, sans-serif;
+        }
+
+        .form-section {
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+            .form-section h4 {
+                margin-bottom: 15px;
+                color: #333;
+                font-weight: bold;
+            }
+
+        .form-label {
+            font-weight: bold;
+            color: #555;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .btn-custom {
+            background-color: #007bff;
+            color: white;
+            border-color: #007bff;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+            .btn-custom:hover {
+                background-color: #0056b3;
+                transform: scale(1.05);
+            }
+
+        .btn-cancel {
+            background-color: #dc3545;
+            color: white;
+            border-color: #dc3545;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+            .btn-cancel:hover {
+                background-color: #c82333;
+                transform: scale(1.05);
+            }
+
+        .button-group {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 30px;
+        }
+
+            .button-group button {
+                margin-left: 10px;
+                border-radius: 25px;
+            }
+
+        #successMessage {
+            font-size: 1rem;
+            font-weight: bold;
+            text-align: center;
+            background-color: #28a745;
+            color: white;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <!-- Success message -->
+        @if (TempData["Message"] != null)
+        {
+            <div id="successMessage" class="alert alert-success">
+                @TempData["Message"]
+            </div>
+        }
+
+        <h2 class="mb-4 text-primary">GIS UDA Configuration</h2>
         <form asp-action="GISUDA" method="post" enctype="multipart/form-data">
             <!-- Service Information Section -->
             <div class="form-section">
